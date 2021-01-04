@@ -1,16 +1,17 @@
 <!doctype html>
 <html>
   <head>
-    <title>receive messages.</title>
+    <title>Viewer Page</title>
   </head>
   <body>
+    <h1>Viewer Page</h1>
     <ul id="messages"></ul>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       $( () => {
         const socket = io();
-        socket.on('message', (msg) => {
+        socket.on('broadcast', (msg) => {
           $('#messages').append($('<li>').text(msg));
         });
       });
