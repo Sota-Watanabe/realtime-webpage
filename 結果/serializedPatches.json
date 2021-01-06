@@ -1,0 +1,19 @@
+{
+  "0": {
+    "type": 2,
+    "vNode": null,
+    "patch": {
+      "tagName": "h2",
+      "properties": { "dataset": {} },
+      "children": [{ "text": " h2 is aaa ", "#type": "VirtualText" }],
+      "namespace": null,
+      "count": 1,
+      "hasWidgets": false,
+      "hasThunks": false,
+      "descendantHooks": false,
+      "#type": "VirtualNode"
+    },
+    "#type": "VirtualPatch"
+  },
+  "a": null
+}

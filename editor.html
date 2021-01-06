@@ -5,14 +5,14 @@
   </head>
   <body>
     <h1>editor page</h1>
-    <input type="button" value="HTML送信" onclick="onSendHtml();" /><br />
+    <input type="button" value="HTML送信" onclick="onUpdateHtml();" /><br />
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script language="javascript" type="text/javascript">
       const socket = io.connect();
-      function onSendHtml() {
-        socket.emit('onSendHtml', '<h2> h2 is aaa </h2>')
-        console.log("onSendHtml");
+      function onUpdateHtml() {
+        socket.emit('onUpdateHtml', '<h2> h2 is aaa </h2>')
+        console.log("onUpdateHtml");
       }
     </script>
   </body>
