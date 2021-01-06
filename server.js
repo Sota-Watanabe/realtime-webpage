@@ -24,7 +24,7 @@ app.get('/editor', (req, res) => {
   res.sendFile(__dirname + '/editor.html');
 });
 app.get('/bundle_viewer.js', (req, res) => {
-  res.sendFile(__dirname + '/viewer.js');
+  res.sendFile(__dirname + '/bundle_viewer.js');
 });
 
 http.listen(3000, () => {
@@ -41,8 +41,9 @@ io.on('connection', (socket) => {
   socket.on('onUpdateHtml', (html) => {
     console.log('receive', html);
     latestVdom = convertHTML(html)
-    initialState = null
+    initialState = convertHTML('<body></body>')
     var patches = diff(initialState, latestVdom);
+console.log(JSON.stringify(patches))
     var serializedPatches = Serializer.serializePatches(patches);
     // var variables = variableInstance.serialize();
     console.log('serializedPatches=', JSON.stringify(serializedPatches))
