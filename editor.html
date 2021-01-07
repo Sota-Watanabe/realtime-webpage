@@ -6,13 +6,14 @@
   </head>
   <body>
     <h1>editor page</h1>
-    <input type="button" value="HTML送信" onclick="onUpdateHtml();" /><br />
+    <input type="text" onInput="onUpdateHtml(this.value)" />
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script language="javascript" type="text/javascript">
       const socket = io.connect();
-      function onUpdateHtml() {
-        socket.emit('onUpdateHtml', '<body><h2> h2 is aaa </h2></body>')
+      function onUpdateHtml(value) {
+        console.log(value);
+        // 変換できない場合も送っちゃってる
+        socket.emit("onUpdateHtml", value);
         console.log("onUpdateHtml");
       }
     </script>

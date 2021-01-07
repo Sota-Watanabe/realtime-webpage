@@ -13,6 +13,8 @@ const convertHTML = require('html-to-vdom')({
   VText: VText
 });
 
+previousVdom = convertHTML('<body></body>')
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
@@ -39,14 +41,10 @@ io.on('connection', (socket) => {
   });
 
   socket.on('onUpdateHtml', (html) => {
-    console.log('receive', html);
-    latestVdom = convertHTML(html)
-    initialState = convertHTML('<body></body>')
-    var patches = diff(initialState, latestVdom);
-console.log(JSON.stringify(patches))
+    latestVdom = convertHTML('<body>' + html + '</body>')
+    var patches = diff(previousVdom,latestVdom);
+    console.log('patches=', JSON.stringify(patches))
     var serializedPatches = Serializer.serializePatches(patches);
-    // var variables = variableInstance.serialize();
-    console.log('serializedPatches=', JSON.stringify(serializedPatches))
 
     var data = {
       vdom: serializedPatches,
@@ -55,6 +53,7 @@ console.log(JSON.stringify(patches))
 
     socket.broadcast.emit('latestHtml', data);
     console.log(' - send! - ')
+    previousVdom = latestVdom
 
   });
 });
