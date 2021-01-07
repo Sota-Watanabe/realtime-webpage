@@ -53,7 +53,7 @@ console.log(JSON.stringify(patches))
       variable: null
     };
 
-    socket.broadcast.emit('broadcast', data);
+    socket.broadcast.emit('latestHtml', data);
     console.log(' - send! - ')
 
   });
