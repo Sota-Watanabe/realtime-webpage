@@ -6,15 +6,16 @@
   </head>
   <body>
     <h1>editor page</h1>
-    <input type="text" onInput="onUpdateHtml(this.value)" />
+    <input style="width: 80%" id="text" type="text" />
     <script src="/socket.io/socket.io.js"></script>
     <script language="javascript" type="text/javascript">
       const socket = io.connect();
-      function onUpdateHtml(value) {
-        console.log(value);
-        // 変換できない場合も送っちゃってる
-        socket.emit("onUpdateHtml", value);
-        console.log("onUpdateHtml");
+      document.getElementById("text").onkeypress = (e) => {
+        const key = e.keyCode || e.charCode || 0;
+        if (key === 13) {
+          socket.emit("onUpdateHtml", document.getElementById('text').value);
+          console.log("onUpdateHtml");
+        }
       }
     </script>
   </body>
