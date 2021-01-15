@@ -1,8 +1,15 @@
 const Serializer = require('@zharktas/vdom-serialize');
+const h = require("virtual-dom/h")
+const createElement = require("virtual-dom/create-element")
 const socket = io();
-var patch = require('virtual-dom/patch');
+const patch = require('virtual-dom/patch');
+
+const article = h("article")
+articleNode = createElement(article)
+document.body.appendChild(articleNode)
+
 socket.on("latestHtml", (data) => {
   console.log("received sync event", data.vdom);
   var serialized = Serializer.deserializePatches(data.vdom);
-  patch(document.body, serialized);
+  patch(articleNode, serialized);
 });
