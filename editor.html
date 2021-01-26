@@ -6,15 +6,17 @@
   </head>
   <body>
     <h1>editor page</h1>
-    <input style="width: 80%" id="text" type="text" />
+    <p>Enter → 送信<br/>Shift + Enter → 改行</p>
+    <textarea id="text" name="area1" class="sample3" cols="40" rows="8" placeholder="HTMLを入力してください"></textarea>
     <script src="/socket.io/socket.io.js"></script>
     <script language="javascript" type="text/javascript">
       const socket = io.connect();
       document.getElementById("text").onkeypress = (e) => {
         const key = e.keyCode || e.charCode || 0;
-        if (key === 13) {
+        if ((key === 13) && (!e.shiftKey)) {
           socket.emit("onUpdateHtml", document.getElementById('text').value);
-          console.log("onUpdateHtml");
+          console.log("emit html");
+          e.preventDefault();
         }
       }
     </script>
