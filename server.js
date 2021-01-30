@@ -42,11 +42,11 @@ io.on('connection', (socket) => {
 
   socket.on('onUpdateHtml', (html) => {
     latestVdom = convertHTML('<body>' + html + '</body>')
-    var patches = diff(previousVdom,latestVdom);
+    const patches = diff(previousVdom, latestVdom);
     console.log('patches=', JSON.stringify(patches))
-    var serializedPatches = Serializer.serializePatches(patches);
+    const serializedPatches = Serializer.serializePatches(patches);
 
-    var data = {
+    const data = {
       vdom: serializedPatches,
       variable: null
     };
@@ -55,5 +55,10 @@ io.on('connection', (socket) => {
     console.log(' - send! - ')
     previousVdom = latestVdom
 
+  });
+
+  socket.on('resetVdom', () => {
+    console.log('resetVdom')
+    previousVdom = convertHTML('<body></body>')
   });
 });
