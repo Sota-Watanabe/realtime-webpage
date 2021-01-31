@@ -7,7 +7,11 @@ const patch = require('virtual-dom/patch');
 const article = h("article")
 articleNode = createElement(article)
 document.body.appendChild(articleNode)
+let domVersion = 0
 
+socket.on('connect', function () {
+  socket.emit('checkDomVersion', domVersion);
+});
 socket.on("latestHtml", (data) => {
   console.log("received sync event", data.vdom);
   var serialized = Serializer.deserializePatches(data.vdom);
