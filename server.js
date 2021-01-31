@@ -14,6 +14,7 @@ const convertHTML = require('html-to-vdom')({
 });
 
 previousVdom = convertHTML('<body></body>')
+domVersion = 0
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -44,6 +45,11 @@ io.on('connection', (socket) => {
     latestVdom = convertHTML('<body>' + html + '</body>')
     const patches = diff(previousVdom, latestVdom);
     console.log('patches=', JSON.stringify(patches))
+    // 変更なしの場合
+    if (Object.keys(patches).length == 1) {
+      console.log("patchの変更なし")
+      return;
+    }
     const serializedPatches = Serializer.serializePatches(patches);
 
     const data = {
@@ -60,5 +66,9 @@ io.on('connection', (socket) => {
   socket.on('resetVdom', () => {
     console.log('resetVdom')
     previousVdom = convertHTML('<body></body>')
+  });
+
+  socket.on('checkDomVersion', (domVersion) => {
+    console.log('checkDomVersion: domVersion=', domVersion)
   });
 });
