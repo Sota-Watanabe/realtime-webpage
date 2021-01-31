@@ -15,6 +15,7 @@ const convertHTML = require('html-to-vdom')({
 
 previousVdom = convertHTML('<body></body>')
 domVersion = 0
+domStore = []
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -52,9 +53,13 @@ io.on('connection', (socket) => {
     }
     const serializedPatches = Serializer.serializePatches(patches);
 
+    // ストアに追加
+    domStore.push(latestVdom)
+    console.log(html)
     const data = {
       vdom: serializedPatches,
-      variable: null
+      variable: null,
+      domVersion: domStore.length
     };
 
     socket.broadcast.emit('latestHtml', data);
@@ -66,9 +71,37 @@ io.on('connection', (socket) => {
   socket.on('resetVdom', () => {
     console.log('resetVdom')
     previousVdom = convertHTML('<body></body>')
+    domStore = []
   });
 
   socket.on('checkDomVersion', (domVersion) => {
-    console.log('checkDomVersion: domVersion=', domVersion)
+    latestDomVersion = domStore.length
+    console.log('latest: domVersion=', latestDomVersion)
+    // console.log('checkDomVersion: domVersion=', domVersion)
+    // 最新のDOM状態ではない場合
+    if (domStore.length !== domVersion) {
+      console.log("update dom from current dom")
+      // 初めてアクセスしたとき
+      if(domVersion == 0) {
+        console.log('first access')
+        currentVdom = convertHTML('<body></body>')
+      }
+      // 途中で回線が落ちた場合
+      else {
+        currentVdom = domStore[domVersion - 1]
+        // console.log("currentVdom:", currentVdom)
+      }
+      latestVdom = domStore.slice(-1)[0]
+      // console.log("latestVdom:", latestVdom)
+      const patches = diff(currentVdom, latestVdom);
+      const serializedPatches = Serializer.serializePatches(patches);
+      const data = {
+        vdom: serializedPatches,
+        variable: null,
+        domVersion: domStore.length
+      };
+      io.to(socket.id).emit('latestHtml', data);
+      console.log('io.to')
+    }
   });
 });

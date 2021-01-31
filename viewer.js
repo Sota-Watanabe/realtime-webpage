@@ -14,6 +14,9 @@ socket.on('connect', function () {
 });
 socket.on("latestHtml", (data) => {
   console.log("received sync event", data.vdom);
+  console.log("received domVersion", data.domVersion);
+  domVersion = data.domVersion
+  console.log('vdom=', data.vdom)
   var serialized = Serializer.deserializePatches(data.vdom);
   patch(articleNode, serialized);
 });
