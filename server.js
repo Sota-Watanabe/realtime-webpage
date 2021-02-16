@@ -3,7 +3,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 const diff = require("virtual-dom/diff")
-const Serializer = require('@zharktas/vdom-serialize');
+const Serializer = require('vdom-serialize');
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
