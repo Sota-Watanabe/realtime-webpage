@@ -1,6 +1,8 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 const diff = require("virtual-dom/diff")
 const Serializer = require('vdom-serialize');
@@ -27,6 +29,40 @@ app.get('/viewer', (req, res) => {
 app.get('/editor', (req, res) => {
   res.sendFile(__dirname + '/editor.html');
 });
+app.post('/', (req, res) => {
+
+  // wordpress用
+  console.log(req.body.post.post_content)
+  html = req.body.post.post_content
+  html = html.replace(/<!--.+? -->/g, '')
+
+  latestVdom = convertHTML('<body>' + html + '</body>')
+  console.log('latestVdom=', latestVdom)
+  const patches = diff(previousVdom, latestVdom);
+  console.log('patches=', JSON.stringify(patches))
+  // 変更なしの場合
+  if (Object.keys(patches).length == 1) {
+    console.log("patchの変更なし")
+    return;
+  }
+  const serializedPatches = Serializer.serializePatches(patches);
+
+  // ストアに追加
+  domStore.push(latestVdom)
+  console.log(html)
+  const data = {
+    vdom: serializedPatches,
+    variable: null,
+    domVersion: domStore.length
+  };
+
+
+  console.log(' - send! - ')
+  io.sockets.emit('latestHtml', data);
+  previousVdom = latestVdom
+  res.send("Received POST Data!\n");
+});
+
 app.get('/bundle_viewer.js', (req, res) => {
   res.sendFile(__dirname + '/bundle_viewer.js');
 });
@@ -40,32 +76,6 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
-  });
-
-  socket.on('onUpdateHtml', (html) => {
-    latestVdom = convertHTML('<body>' + html + '</body>')
-    const patches = diff(previousVdom, latestVdom);
-    console.log('patches=', JSON.stringify(patches))
-    // 変更なしの場合
-    if (Object.keys(patches).length == 1) {
-      console.log("patchの変更なし")
-      return;
-    }
-    const serializedPatches = Serializer.serializePatches(patches);
-
-    // ストアに追加
-    domStore.push(latestVdom)
-    console.log(html)
-    const data = {
-      vdom: serializedPatches,
-      variable: null,
-      domVersion: domStore.length
-    };
-
-    socket.broadcast.emit('latestHtml', data);
-    console.log(' - send! - ')
-    previousVdom = latestVdom
-
   });
 
   socket.on('resetVdom', () => {
