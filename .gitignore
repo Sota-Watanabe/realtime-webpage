@@ -1,3 +1,6 @@
 /node_modules
 .DS_Store
 bundle_viewer.js
+bundle_editor.js
+メモ.md
+serializedPatches.json

@@ -3,37 +3,13 @@
   <head>
     <link rel="shortcut icon" href="#" />
     <title>Editor Page</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./bundle_editor.js"></script>
   </head>
   <body>
     <h1>editor page</h1>
     <p>Ctrl + Enter → 送信</p>
-    <textarea id="text" name="area1" class="sample3" cols="40" rows="8" placeholder="HTMLを入力してください"></textarea>
+    <textarea onkeyup="updateTextarea()" id="text" name="area1" class="sample3" cols="40" rows="8" placeholder="HTMLを入力してください"></textarea>
     <input type="button" value="仮想DOMリセット" onclick="socket.emit('resetVdom');"><br>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script language="javascript" type="text/javascript">
-      const socket = io.connect();
-      document.getElementById("text").onkeydown = (e) => {
-        const key = e.keyCode || e.charCode || 0;
-        if ((key === 13) && (e.metaKey)) {
-          socket.emit("onUpdateHtml", document.getElementById('text').value);
-          console.log("emit html");
-          e.preventDefault();
-        }
-        var elem, end, start, value;
-        if (e.keyCode === 9) {
-          if (e.preventDefault) {
-            e.preventDefault();
-          }
-          elem = e.target;
-          start = elem.selectionStart;
-          end = elem.selectionEnd;
-          value = elem.value;
-          elem.value = "" + (value.substring(0, start)) + "\t" + (value.substring(end));
-          elem.selectionStart = elem.selectionEnd = start + 1;
-          return false;
-        }
-      }
-    </script>
   </body>
 </html>
