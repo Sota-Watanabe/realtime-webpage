@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run bundle && node server.js",
-    "devstart": "node server.js",
-    "bundle": "browserify viewer.js -o bundle_viewer.js && browserify editor.js -o bundle_editor.js"
+    "start": "npm run bundle && node index.js",
+    "devstart": "node index.js",
+    "bundle": "browserify public/js/viewer.js -o public/js/dist/bundle_viewer.js && browserify public/js/editor.js -o public/js/dist/bundle_editor.js"
   },
   "author": "",
   "license": "ISC",

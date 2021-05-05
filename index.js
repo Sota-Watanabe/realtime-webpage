@@ -1,8 +1,10 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 const diff = require("virtual-dom/diff")
 const Serializer = require('vdom-serialize');
@@ -20,14 +22,14 @@ domVersion = 0
 domStore = []
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/viewer', (req, res) => {
-  res.sendFile(__dirname + '/viewer.html');
+  res.sendFile(__dirname + '/public/viewer.html');
 });
 app.get('/editor', (req, res) => {
-  res.sendFile(__dirname + '/editor.html');
+  res.sendFile(__dirname + '/public/editor.html');
 });
 app.post('/', (req, res) => {
 
