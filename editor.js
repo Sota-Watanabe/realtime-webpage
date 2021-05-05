@@ -18,8 +18,10 @@ articleNode = createElement(article)
 
 window.updateTextarea = () => {
     console.log('start updateTextarea')
-    let html = document.getElementById('text').value.replace(/\n/g, '')
+    let html = document.getElementById('text').value
+    html = html.replace(/\n/g, '')
     html = html.replace(/\t/g, '')
+    html = html.replace(/<!-- .*? -->/, '')// <!-- -->はノードがundefinedになるので削除
     console.log('html=', html)
     if (checkHTML(html) == true) {
         socket.emit("onUpdateHtml", html);
