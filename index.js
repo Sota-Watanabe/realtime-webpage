@@ -65,15 +65,6 @@ app.post('/', (req, res) => {
   res.send("Received POST Data!\n");
 });
 
-// ここ静的ファイルとして扱うやつやった方がいい
-app.get('/bundle_editor.js', (req, res) => {
-  res.sendFile(__dirname + '/bundle_editor.js');
-});
-
-app.get('/bundle_viewer.js', (req, res) => {
-  res.sendFile(__dirname + '/bundle_viewer.js');
-});
-
 http.listen(3000, () => {
   console.log('listening on *:3000');
 });
