@@ -1,0 +1,23 @@
+.editing {
+  position: fixed; /* 要素の位置を固定する */
+  top: 0; /* 基準の位置を画面の一番上に指定する */
+  left: 0; /* 基準の位置を画面の一番左に指定する */
+  margin: 0; /* 要素の余白を０にする */
+  padding: 10px; /* 要素内側の余白を指定する */
+  height: 30px; /* 高さを指定する */
+  width: 100%; /* 幅を指定する */
+  background: #326693; /* 背景色を指定する */
+  color: white; /* フォントの色を指定する */
+}
+
+.hidden {
+  display: none;
+}
+
+.header-margin {
+  margin-top: 50px !important;
+}
+
+html {
+  scroll-padding-top: 50px; /* 固定ヘッダの高さ分 */
+}

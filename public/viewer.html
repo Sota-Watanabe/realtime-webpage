@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="css/viewer.css">
     <title>Viewer Page</title>
     <link rel="shortcut icon" href="#" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
@@ -9,6 +10,7 @@
     <!-- <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"> -->
   </head>
   <body>
+    <p id="editingHeader" class="hidden editing">このページは現在、リアルタイムで編集中です。</p>
     <h1>Viewer Page</h1>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/dist/bundle_viewer.js"></script>

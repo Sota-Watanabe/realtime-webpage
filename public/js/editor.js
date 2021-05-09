@@ -13,6 +13,10 @@ const convertHTML = require('html-to-vdom')({
 
 const socket = io.connect();
 
+socket.on('connect', function () {
+    socket.emit('startEditing');
+});
+
 const article = h("article")
 articleNode = createElement(article)
 
@@ -45,3 +49,8 @@ const checkHTML = (html) => {
     }
     return true
 }
+
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault();
+    event.returnValue = '';
+  });

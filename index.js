@@ -20,6 +20,7 @@ const convertHTML = require('html-to-vdom')({
 previousVdom = convertHTML('<body></body>')
 domVersion = 0
 domStore = []
+let editingStatus = false
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
@@ -70,9 +71,23 @@ http.listen(3000, () => {
 });
 
 io.on('connection', (socket) => {
+  let admin = false;
   console.log('a user connected');
+  io.to(socket.id).emit('editingStatus', editingStatus);
+
+  socket.on('startEditing', (status) => {
+    editingStatus = true
+    admin = true;
+    console.log('receive status from editor', status)
+    socket.broadcast.emit('editingStatus', true);
+  });
 
   socket.on('disconnect', () => {
+    if (admin === true){
+      editingStatus = false
+      // admin = false; なくてもいい
+      socket.broadcast.emit('editingStatus', false);
+    }
     console.log('user disconnected');
   });
 
