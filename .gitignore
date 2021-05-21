@@ -4,3 +4,5 @@ bundle_viewer.js
 bundle_editor.js
 メモ.md
 serializedPatches.json
+# Local Netlify folder
+.netlify
