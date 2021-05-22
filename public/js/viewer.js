@@ -32,16 +32,16 @@ socket.on("latestHtml", (data) => {
   patch(articleNode, serialized);
 });
 
-socket.on("editingStatus", (status) => {
-  console.log("status=", status);
-  const editingHeader = document.getElementById('editingHeader')
-  const body = document.getElementsByTagName("BODY")[0];
-  console.log('start if')
-  if(status === true) {
-    editingHeader.classList.remove('hidden')
-    body.classList.add('header-margin')
-  } else {
-    editingHeader.classList.add('hidden')
-    body.classList.remove('header-margin')
-  }
-});
+// socket.on("editingStatus", (status) => {
+//   console.log("status=", status);
+//   const editingHeader = document.getElementById('editingHeader')
+//   const body = document.getElementsByTagName("BODY")[0];
+//   console.log('start if')
+//   if(status === true) {
+//     editingHeader.classList.remove('hidden')
+//     body.classList.add('header-margin')
+//   } else {
+//     editingHeader.classList.add('hidden')
+//     body.classList.remove('header-margin')
+//   }
+// });
