@@ -107,7 +107,7 @@ io.on('connection', (socket) => {
       return;
     }
     const serializedPatches = Serializer.serializePatches(patches);
-
+    delete serializedPatches.a
     // ストアに追加
     domStore.push(latestVdom)
     console.log(html)
