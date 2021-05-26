@@ -25,7 +25,9 @@ window.updateTextarea = () => {
     let html = document.getElementById('text').value
     html = html.replace(/\n/g, '')
     html = html.replace(/\t/g, '')
-    html = html.replace(/<!-- .*? -->/, '')// <!-- -->はノードがundefinedになるので削除
+    html = html.replace(/<!--.*?-->/g, '')// <!-- -->はノードがundefinedになるので削除
+    html = html.replace(/<style.*?style>/g, '')// <!-- -->はノードがundefinedになるので削除
+    html = html.replace(/<script.*?script>/g, '')// <!-- -->はノードがundefinedになるので削除
     console.log('html=', html)
     if (checkHTML(html) == true) {
         socket.emit("onUpdateHtml", html);
