@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Root Page</title>
+  </head>
+  <body>
+    <ul id="linksList"></ul>
+  </body>
+</html>
+<script type="text/javascript">
+
+  const LinksList = document.getElementById('linksList')
+
+  for(let i = 1; i <= 10; i++) {
+    const anchor = document.createElement('a')
+    const num = ('0' + i).slice(-2)
+    console.log('num=', num)
+    anchor.href = `/test1-${num}`
+    anchor.innerText = `test1-${num}`
+    const li = document.createElement('li');
+    li.appendChild(anchor)
+    LinksList.appendChild(li)
+  }
+
+  </script>
