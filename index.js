@@ -42,7 +42,7 @@ app.post('/', (req, res) => {
   latestVdom = convertHTML('<body>' + html + '</body>')
   console.log('latestVdom=', latestVdom)
   const patches = diff(previousVdom, latestVdom);
-  console.log('patches=', JSON.stringify(patches))
+  // console.log('patches=', JSON.stringify(patches))
   // 変更なしの場合
   if (Object.keys(patches).length == 1) {
     console.log("patchの変更なし")
@@ -100,7 +100,7 @@ io.on('connection', (socket) => {
   socket.on('onUpdateHtml', (html) => {
     latestVdom = convertHTML('<body>' + html + '</body>')
     const patches = diff(previousVdom, latestVdom);
-    console.log('patches=', JSON.stringify(patches))
+    // console.log('patches=', JSON.stringify(patches))
     // 変更なしの場合
     if (Object.keys(patches).length == 1) {
       console.log("patchの変更なし")
@@ -110,15 +110,16 @@ io.on('connection', (socket) => {
     delete serializedPatches.a
     // ストアに追加
     domStore.push(latestVdom)
-    console.log(html)
     const data = {
       vdom: serializedPatches,
       variable: null,
       domVersion: domStore.length
     };
-
     socket.broadcast.emit('latestHtml', data);
-    console.log(' - send! - ')
+    console.log('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓')
+    console.log(JSON.stringify(data))
+    console.log('↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑')
+    console.log(' - send! - \n\n\n')
     previousVdom = latestVdom
   });
 
