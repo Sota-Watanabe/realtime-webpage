@@ -1,0 +1,1680 @@
+{
+  "vdom": {
+    "416": {
+      "type": 4,
+      "vNode": {
+        "tagName": "h3",
+        "properties": {
+          "dataset": {},
+          "id": "アップデート3.0の内容--全ヌシとの通常戦闘が追加"
+        },
+        "children": [
+          { "text": "    全ヌシとの通常戦闘が追加  ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "patch": { "id": "アップデート3.0の内容--新規モンスターが登場" },
+      "#type": "VirtualPatch"
+    },
+    "417": {
+      "type": 1,
+      "vNode": {
+        "text": "    全ヌシとの通常戦闘が追加  ",
+        "#type": "VirtualText"
+      },
+      "patch": { "text": "新規モンスターが登場", "#type": "VirtualText" },
+      "#type": "VirtualPatch"
+    },
+    "419": [
+      {
+        "type": 4,
+        "vNode": {
+          "tagName": "table",
+          "properties": {
+            "dataset": {},
+            "className": "fixed_table noflame_table"
+          },
+          "children": [
+            { "text": "    ", "#type": "VirtualText" },
+            {
+              "tagName": "tbody",
+              "properties": { "dataset": {} },
+              "children": [
+                { "text": "      ", "#type": "VirtualText" },
+                {
+                  "tagName": "tr",
+                  "properties": { "dataset": {} },
+                  "children": [
+                    { "text": "        ", "#type": "VirtualText" },
+                    {
+                      "tagName": "td",
+                      "properties": {
+                        "dataset": {},
+                        "style": { "text-align": "center" }
+                      },
+                      "children": [
+                        { "text": "          ", "#type": "VirtualText" },
+                        {
+                          "tagName": "picture",
+                          "properties": { "dataset": {} },
+                          "children": [
+                            { "text": "            ", "#type": "VirtualText" },
+                            {
+                              "tagName": "img",
+                              "properties": {
+                                "dataset": {},
+                                "style": { "height": "auto" },
+                                "className": "",
+                                "src": "https://lh3.googleusercontent.com/dsoUExp7G876EDAx7Nu9gOCl798zcyYcH_Snf6_X2ziHTZTFB-8lnF1oWCh1lkc11vZPjjMpnbEtRLe2cJYuemLiM2yq-yOKX7j8Gf-r1f4",
+                                "width": "512",
+                                "height": "288",
+                                "alt": "ヌシレウス_溶岩洞"
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            { "text": "            ", "#type": "VirtualText" },
+                            {
+                              "tagName": "source",
+                              "properties": {
+                                "dataset": {},
+                                "type": "image/webp",
+                                "srcset": "                https://lh3.googleusercontent.com/dsoUExp7G876EDAx7Nu9gOCl798zcyYcH_Snf6_X2ziHTZTFB-8lnF1oWCh1lkc11vZPjjMpnbEtRLe2cJYuemLiM2yq-yOKX7j8Gf-r1f4=rw              "
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            { "text": "          ", "#type": "VirtualText" }
+                          ],
+                          "namespace": null,
+                          "count": 5,
+                          "hasWidgets": false,
+                          "hasThunks": false,
+                          "descendantHooks": false,
+                          "#type": "VirtualNode"
+                        },
+                        { "text": "        ", "#type": "VirtualText" }
+                      ],
+                      "namespace": null,
+                      "count": 8,
+                      "hasWidgets": false,
+                      "hasThunks": false,
+                      "descendantHooks": false,
+                      "#type": "VirtualNode"
+                    },
+                    { "text": "        ", "#type": "VirtualText" },
+                    {
+                      "tagName": "td",
+                      "properties": {
+                        "dataset": {},
+                        "style": { "text-align": "center" }
+                      },
+                      "children": [
+                        { "text": "          ", "#type": "VirtualText" },
+                        {
+                          "tagName": "picture",
+                          "properties": { "dataset": {} },
+                          "children": [
+                            { "text": "            ", "#type": "VirtualText" },
+                            {
+                              "tagName": "img",
+                              "properties": {
+                                "dataset": {},
+                                "style": { "height": "auto" },
+                                "className": "",
+                                "src": "https://lh3.googleusercontent.com/HeTUwd7L-KbfvsO8TZPvNrmwgXOiU4LCuKyRvpIgst77vOle1EZ6V5ZhVRcj2FaRpICurBfmAUlZeUh_AO5A-NbCgffKKS5dVGmGdcZTpJi6",
+                                "width": "512",
+                                "height": "288",
+                                "alt": "ヌシディアブロス_砂原"
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            { "text": "            ", "#type": "VirtualText" },
+                            {
+                              "tagName": "source",
+                              "properties": {
+                                "dataset": {},
+                                "type": "image/webp",
+                                "srcset": "                https://lh3.googleusercontent.com/HeTUwd7L-KbfvsO8TZPvNrmwgXOiU4LCuKyRvpIgst77vOle1EZ6V5ZhVRcj2FaRpICurBfmAUlZeUh_AO5A-NbCgffKKS5dVGmGdcZTpJi6=rw              "
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            { "text": "          ", "#type": "VirtualText" }
+                          ],
+                          "namespace": null,
+                          "count": 5,
+                          "hasWidgets": false,
+                          "hasThunks": false,
+                          "descendantHooks": false,
+                          "#type": "VirtualNode"
+                        },
+                        { "text": "        ", "#type": "VirtualText" }
+                      ],
+                      "namespace": null,
+                      "count": 8,
+                      "hasWidgets": false,
+                      "hasThunks": false,
+                      "descendantHooks": false,
+                      "#type": "VirtualNode"
+                    },
+                    { "text": "      ", "#type": "VirtualText" }
+                  ],
+                  "namespace": null,
+                  "count": 21,
+                  "hasWidgets": false,
+                  "hasThunks": false,
+                  "descendantHooks": false,
+                  "#type": "VirtualNode"
+                },
+                { "text": "    ", "#type": "VirtualText" }
+              ],
+              "namespace": null,
+              "count": 24,
+              "hasWidgets": false,
+              "hasThunks": false,
+              "descendantHooks": false,
+              "#type": "VirtualNode"
+            },
+            { "text": "  ", "#type": "VirtualText" }
+          ],
+          "namespace": null,
+          "count": 27,
+          "hasWidgets": false,
+          "hasThunks": false,
+          "descendantHooks": false,
+          "#type": "VirtualNode"
+        },
+        "patch": { "className": "fixed_table" },
+        "#type": "VirtualPatch"
+      },
+      {
+        "type": 6,
+        "vNode": null,
+        "patch": {
+          "tagName": "tbody",
+          "properties": { "dataset": {} },
+          "children": [
+            { "text": "      ", "#type": "VirtualText" },
+            {
+              "tagName": "tr",
+              "properties": { "dataset": {} },
+              "children": [
+                { "text": "        ", "#type": "VirtualText" },
+                {
+                  "tagName": "td",
+                  "properties": {
+                    "dataset": {},
+                    "style": { "text-align": "center" }
+                  },
+                  "children": [
+                    { "text": "          ", "#type": "VirtualText" },
+                    {
+                      "tagName": "a",
+                      "properties": {
+                        "dataset": {},
+                        "href": "/MH-RISE/page/158028951795563606.html"
+                      },
+                      "children": [
+                        { "text": "            ", "#type": "VirtualText" },
+                        {
+                          "tagName": "picture",
+                          "properties": { "dataset": {} },
+                          "children": [
+                            {
+                              "text": "              ",
+                              "#type": "VirtualText"
+                            },
+                            {
+                              "tagName": "img",
+                              "properties": {
+                                "dataset": {},
+                                "style": { "height": "auto" },
+                                "className": "",
+                                "src": "https://lh3.googleusercontent.com/p9oiwh2Y81pIevlb1KZa8lCHtwJbNh5zQlNA_LkLysWSfnsxphqshXSUvNj7Jb9xwP6RNg1sBNhqbpjby4OEP8vO0L-ij8WDP57wDNAu2bCs",
+                                "width": "512",
+                                "height": "288",
+                                "alt": "バルファルク"
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            {
+                              "text": "              ",
+                              "#type": "VirtualText"
+                            },
+                            {
+                              "tagName": "source",
+                              "properties": {
+                                "dataset": {},
+                                "type": "image/webp",
+                                "srcset": "                  https://lh3.googleusercontent.com/p9oiwh2Y81pIevlb1KZa8lCHtwJbNh5zQlNA_LkLysWSfnsxphqshXSUvNj7Jb9xwP6RNg1sBNhqbpjby4OEP8vO0L-ij8WDP57wDNAu2bCs=rw                "
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            { "text": " ", "#type": "VirtualText" }
+                          ],
+                          "namespace": null,
+                          "count": 5,
+                          "hasWidgets": false,
+                          "hasThunks": false,
+                          "descendantHooks": false,
+                          "#type": "VirtualNode"
+                        },
+                        {
+                          "tagName": "br",
+                          "properties": { "dataset": {} },
+                          "children": [],
+                          "namespace": null,
+                          "count": 0,
+                          "hasWidgets": false,
+                          "hasThunks": false,
+                          "descendantHooks": false,
+                          "#type": "VirtualNode"
+                        },
+                        { "text": "バルファルク", "#type": "VirtualText" }
+                      ],
+                      "namespace": null,
+                      "count": 9,
+                      "hasWidgets": false,
+                      "hasThunks": false,
+                      "descendantHooks": false,
+                      "#type": "VirtualNode"
+                    },
+                    { "text": "        ", "#type": "VirtualText" }
+                  ],
+                  "namespace": null,
+                  "count": 12,
+                  "hasWidgets": false,
+                  "hasThunks": false,
+                  "descendantHooks": false,
+                  "#type": "VirtualNode"
+                },
+                { "text": "        ", "#type": "VirtualText" },
+                {
+                  "tagName": "td",
+                  "properties": {
+                    "dataset": {},
+                    "style": { "text-align": "center" }
+                  },
+                  "children": [
+                    { "text": "          ", "#type": "VirtualText" },
+                    {
+                      "tagName": "a",
+                      "properties": {
+                        "dataset": {},
+                        "href": "/MH-RISE/page/159381780560876233.html"
+                      },
+                      "children": [
+                        { "text": "            ", "#type": "VirtualText" },
+                        {
+                          "tagName": "picture",
+                          "properties": { "dataset": {} },
+                          "children": [
+                            {
+                              "text": "              ",
+                              "#type": "VirtualText"
+                            },
+                            {
+                              "tagName": "img",
+                              "properties": {
+                                "dataset": {},
+                                "style": { "height": "auto" },
+                                "className": "",
+                                "src": "https://lh3.googleusercontent.com/OhPBGRtDNhNHbFvLf-VkoSRa29hI7ISDNRq1qguTGujhmgEjp6ppJ65S0iW85r_VB2yj8g41uhzyfxhiuddYv2vt_kl-LM1HvwLXIVbaeOGz",
+                                "width": "512",
+                                "height": "288",
+                                "alt": "ヌシジンオウガ"
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            {
+                              "text": "              ",
+                              "#type": "VirtualText"
+                            },
+                            {
+                              "tagName": "source",
+                              "properties": {
+                                "dataset": {},
+                                "type": "image/webp",
+                                "srcset": "                  https://lh3.googleusercontent.com/OhPBGRtDNhNHbFvLf-VkoSRa29hI7ISDNRq1qguTGujhmgEjp6ppJ65S0iW85r_VB2yj8g41uhzyfxhiuddYv2vt_kl-LM1HvwLXIVbaeOGz=rw                "
+                              },
+                              "children": [],
+                              "namespace": null,
+                              "count": 0,
+                              "hasWidgets": false,
+                              "hasThunks": false,
+                              "descendantHooks": false,
+                              "#type": "VirtualNode"
+                            },
+                            { "text": " ", "#type": "VirtualText" }
+                          ],
+                          "namespace": null,
+                          "count": 5,
+                          "hasWidgets": false,
+                          "hasThunks": false,
+                          "descendantHooks": false,
+                          "#type": "VirtualNode"
+                        },
+                        {
+                          "tagName": "br",
+                          "properties": { "dataset": {} },
+                          "children": [],
+                          "namespace": null,
+                          "count": 0,
+                          "hasWidgets": false,
+                          "hasThunks": false,
+                          "descendantHooks": false,
+                          "#type": "VirtualNode"
+                        },
+                        { "text": "ヌシジンオウガ", "#type": "VirtualText" }
+                      ],
+                      "namespace": null,
+                      "count": 9,
+                      "hasWidgets": false,
+                      "hasThunks": false,
+                      "descendantHooks": false,
+                      "#type": "VirtualNode"
+                    },
+                    { "text": "        ", "#type": "VirtualText" }
+                  ],
+                  "namespace": null,
+                  "count": 12,
+                  "hasWidgets": false,
+                  "hasThunks": false,
+                  "descendantHooks": false,
+                  "#type": "VirtualNode"
+                },
+                { "text": "      ", "#type": "VirtualText" }
+              ],
+              "namespace": null,
+              "count": 29,
+              "hasWidgets": false,
+              "hasThunks": false,
+              "descendantHooks": false,
+              "#type": "VirtualNode"
+            },
+            { "text": "    ", "#type": "VirtualText" }
+          ],
+          "namespace": null,
+          "count": 32,
+          "hasWidgets": false,
+          "hasThunks": false,
+          "descendantHooks": false,
+          "#type": "VirtualNode"
+        },
+        "#type": "VirtualPatch"
+      },
+      {
+        "type": 6,
+        "vNode": null,
+        "patch": { "text": "  ", "#type": "VirtualText" },
+        "#type": "VirtualPatch"
+      }
+    ],
+    "421": {
+      "type": 2,
+      "vNode": {
+        "tagName": "tbody",
+        "properties": { "dataset": {} },
+        "children": [
+          { "text": "      ", "#type": "VirtualText" },
+          {
+            "tagName": "tr",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "        ", "#type": "VirtualText" },
+              {
+                "tagName": "td",
+                "properties": {
+                  "dataset": {},
+                  "style": { "text-align": "center" }
+                },
+                "children": [
+                  { "text": "          ", "#type": "VirtualText" },
+                  {
+                    "tagName": "picture",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "            ", "#type": "VirtualText" },
+                      {
+                        "tagName": "img",
+                        "properties": {
+                          "dataset": {},
+                          "style": { "height": "auto" },
+                          "className": "",
+                          "src": "https://lh3.googleusercontent.com/dsoUExp7G876EDAx7Nu9gOCl798zcyYcH_Snf6_X2ziHTZTFB-8lnF1oWCh1lkc11vZPjjMpnbEtRLe2cJYuemLiM2yq-yOKX7j8Gf-r1f4",
+                          "width": "512",
+                          "height": "288",
+                          "alt": "ヌシレウス_溶岩洞"
+                        },
+                        "children": [],
+                        "namespace": null,
+                        "count": 0,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "            ", "#type": "VirtualText" },
+                      {
+                        "tagName": "source",
+                        "properties": {
+                          "dataset": {},
+                          "type": "image/webp",
+                          "srcset": "                https://lh3.googleusercontent.com/dsoUExp7G876EDAx7Nu9gOCl798zcyYcH_Snf6_X2ziHTZTFB-8lnF1oWCh1lkc11vZPjjMpnbEtRLe2cJYuemLiM2yq-yOKX7j8Gf-r1f4=rw              "
+                        },
+                        "children": [],
+                        "namespace": null,
+                        "count": 0,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "          ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 5,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "        ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 8,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "        ", "#type": "VirtualText" },
+              {
+                "tagName": "td",
+                "properties": {
+                  "dataset": {},
+                  "style": { "text-align": "center" }
+                },
+                "children": [
+                  { "text": "          ", "#type": "VirtualText" },
+                  {
+                    "tagName": "picture",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "            ", "#type": "VirtualText" },
+                      {
+                        "tagName": "img",
+                        "properties": {
+                          "dataset": {},
+                          "style": { "height": "auto" },
+                          "className": "",
+                          "src": "https://lh3.googleusercontent.com/HeTUwd7L-KbfvsO8TZPvNrmwgXOiU4LCuKyRvpIgst77vOle1EZ6V5ZhVRcj2FaRpICurBfmAUlZeUh_AO5A-NbCgffKKS5dVGmGdcZTpJi6",
+                          "width": "512",
+                          "height": "288",
+                          "alt": "ヌシディアブロス_砂原"
+                        },
+                        "children": [],
+                        "namespace": null,
+                        "count": 0,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "            ", "#type": "VirtualText" },
+                      {
+                        "tagName": "source",
+                        "properties": {
+                          "dataset": {},
+                          "type": "image/webp",
+                          "srcset": "                https://lh3.googleusercontent.com/HeTUwd7L-KbfvsO8TZPvNrmwgXOiU4LCuKyRvpIgst77vOle1EZ6V5ZhVRcj2FaRpICurBfmAUlZeUh_AO5A-NbCgffKKS5dVGmGdcZTpJi6=rw              "
+                        },
+                        "children": [],
+                        "namespace": null,
+                        "count": 0,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "          ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 5,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "        ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 8,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 21,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "    ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 24,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "patch": {
+        "tagName": "thead",
+        "properties": { "dataset": {} },
+        "children": [
+          { "text": "      ", "#type": "VirtualText" },
+          {
+            "tagName": "tr",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "        ", "#type": "VirtualText" },
+              {
+                "tagName": "th",
+                "properties": {
+                  "dataset": {},
+                  "style": { "text-align": "center" },
+                  "colspan": "2"
+                },
+                "children": [
+                  {
+                    "text": "          ver3.0の新規モンスター一覧        ",
+                    "#type": "VirtualText"
+                  }
+                ],
+                "namespace": null,
+                "count": 1,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 4,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "    ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 7,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "#type": "VirtualPatch"
+    },
+    "446": {
+      "type": 1,
+      "vNode": { "text": "  ", "#type": "VirtualText" },
+      "patch": { "text": "    ", "#type": "VirtualText" },
+      "#type": "VirtualPatch"
+    },
+    "449": {
+      "type": 1,
+      "vNode": {
+        "text": "    アップデート3.0からは「ヌシリオレウス」と「ヌシディアブロス」を含む、全てのヌシモンスターの通常討伐クエストが登場する。2.0での解放条件から想定すると、一定以上までハンターランクを上げ、百竜夜行で一度でも該当ヌシモンスターを討伐すれば解放となりそうだ。  ",
+        "#type": "VirtualText"
+      },
+      "patch": {
+        "text": "    アップデート3.0では「奇しき赫耀のバルファルク」と「ヌシジンオウガ」の2体が実装確定となった。バルファルクは『モンスターハンターダブルクロス(MHXX)』で登場したものとは異なり、よりエネルギー放出の強い変異体としての登場となった。ヌシジンオウガはMHXXの二つ名モンスター「雷公主ジンオウガ」と似た黄色の雷を放ち、3.0配信直後から通常マップでも戦闘できるようだ。  ",
+        "#type": "VirtualText"
+      },
+      "#type": "VirtualPatch"
+    },
+    "451": {
+      "type": 2,
+      "vNode": {
+        "tagName": "table",
+        "properties": { "dataset": {}, "className": "related_links" },
+        "children": [
+          { "text": "    ", "#type": "VirtualText" },
+          {
+            "tagName": "tbody",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/153371666242625772.html"
+                        },
+                        "children": [
+                          {
+                            "text": "ヌシリオレウスの弱点と攻略",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/155179080503801806.html"
+                        },
+                        "children": [
+                          {
+                            "text": "ヌシディアブロスの弱点と攻略",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/137292977818069920.html"
+                        },
+                        "children": [
+                          {
+                            "text": "百竜夜行攻略の流れとクリアのコツ",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/154230272735351953.html"
+                        },
+                        "children": [
+                          {
+                            "text": "ハンターランクの効率的な上げ方",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "    ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 37,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "  ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 40,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "patch": {
+        "tagName": "h3",
+        "properties": {
+          "dataset": {},
+          "id": "アップデート3.0の内容--全ヌシとの通常戦闘が追加"
+        },
+        "children": [
+          { "text": "    全ヌシとの通常戦闘が追加  ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "#type": "VirtualPatch"
+    },
+    "493": {
+      "type": 2,
+      "vNode": {
+        "tagName": "h3",
+        "properties": {
+          "dataset": {},
+          "id": "アップデート3.0の内容--新規モンスターが登場"
+        },
+        "children": [
+          { "text": "新規モンスターが登場", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "patch": {
+        "tagName": "table",
+        "properties": {
+          "dataset": {},
+          "className": "fixed_table noflame_table"
+        },
+        "children": [
+          { "text": "    ", "#type": "VirtualText" },
+          {
+            "tagName": "tbody",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": {
+                      "dataset": {},
+                      "style": { "text-align": "center" }
+                    },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "picture",
+                        "properties": { "dataset": {} },
+                        "children": [
+                          { "text": "            ", "#type": "VirtualText" },
+                          {
+                            "tagName": "img",
+                            "properties": {
+                              "dataset": {},
+                              "style": { "height": "auto" },
+                              "className": "",
+                              "src": "https://lh3.googleusercontent.com/dsoUExp7G876EDAx7Nu9gOCl798zcyYcH_Snf6_X2ziHTZTFB-8lnF1oWCh1lkc11vZPjjMpnbEtRLe2cJYuemLiM2yq-yOKX7j8Gf-r1f4",
+                              "width": "512",
+                              "height": "288",
+                              "alt": "ヌシレウス_溶岩洞"
+                            },
+                            "children": [],
+                            "namespace": null,
+                            "count": 0,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          { "text": "            ", "#type": "VirtualText" },
+                          {
+                            "tagName": "source",
+                            "properties": {
+                              "dataset": {},
+                              "type": "image/webp",
+                              "srcset": "                https://lh3.googleusercontent.com/dsoUExp7G876EDAx7Nu9gOCl798zcyYcH_Snf6_X2ziHTZTFB-8lnF1oWCh1lkc11vZPjjMpnbEtRLe2cJYuemLiM2yq-yOKX7j8Gf-r1f4=rw              "
+                            },
+                            "children": [],
+                            "namespace": null,
+                            "count": 0,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          { "text": "          ", "#type": "VirtualText" }
+                        ],
+                        "namespace": null,
+                        "count": 5,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 8,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": {
+                      "dataset": {},
+                      "style": { "text-align": "center" }
+                    },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "picture",
+                        "properties": { "dataset": {} },
+                        "children": [
+                          { "text": "            ", "#type": "VirtualText" },
+                          {
+                            "tagName": "img",
+                            "properties": {
+                              "dataset": {},
+                              "style": { "height": "auto" },
+                              "className": "",
+                              "src": "https://lh3.googleusercontent.com/HeTUwd7L-KbfvsO8TZPvNrmwgXOiU4LCuKyRvpIgst77vOle1EZ6V5ZhVRcj2FaRpICurBfmAUlZeUh_AO5A-NbCgffKKS5dVGmGdcZTpJi6",
+                              "width": "512",
+                              "height": "288",
+                              "alt": "ヌシディアブロス_砂原"
+                            },
+                            "children": [],
+                            "namespace": null,
+                            "count": 0,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          { "text": "            ", "#type": "VirtualText" },
+                          {
+                            "tagName": "source",
+                            "properties": {
+                              "dataset": {},
+                              "type": "image/webp",
+                              "srcset": "                https://lh3.googleusercontent.com/HeTUwd7L-KbfvsO8TZPvNrmwgXOiU4LCuKyRvpIgst77vOle1EZ6V5ZhVRcj2FaRpICurBfmAUlZeUh_AO5A-NbCgffKKS5dVGmGdcZTpJi6=rw              "
+                            },
+                            "children": [],
+                            "namespace": null,
+                            "count": 0,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          { "text": "          ", "#type": "VirtualText" }
+                        ],
+                        "namespace": null,
+                        "count": 5,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 8,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 21,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "    ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 24,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "  ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 27,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "#type": "VirtualPatch"
+    },
+    "496": {
+      "type": 2,
+      "vNode": {
+        "tagName": "table",
+        "properties": { "dataset": {}, "className": "fixed_table" },
+        "children": [
+          { "text": "    ", "#type": "VirtualText" },
+          {
+            "tagName": "thead",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "th",
+                    "properties": {
+                      "dataset": {},
+                      "style": { "text-align": "center" },
+                      "colspan": "2"
+                    },
+                    "children": [
+                      {
+                        "text": "          ver3.0の新規モンスター一覧        ",
+                        "#type": "VirtualText"
+                      }
+                    ],
+                    "namespace": null,
+                    "count": 1,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 4,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "    ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 7,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "    ", "#type": "VirtualText" },
+          {
+            "tagName": "tbody",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": {
+                      "dataset": {},
+                      "style": { "text-align": "center" }
+                    },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/158028951795563606.html"
+                        },
+                        "children": [
+                          { "text": "            ", "#type": "VirtualText" },
+                          {
+                            "tagName": "picture",
+                            "properties": { "dataset": {} },
+                            "children": [
+                              {
+                                "text": "              ",
+                                "#type": "VirtualText"
+                              },
+                              {
+                                "tagName": "img",
+                                "properties": {
+                                  "dataset": {},
+                                  "style": { "height": "auto" },
+                                  "className": "",
+                                  "src": "https://lh3.googleusercontent.com/p9oiwh2Y81pIevlb1KZa8lCHtwJbNh5zQlNA_LkLysWSfnsxphqshXSUvNj7Jb9xwP6RNg1sBNhqbpjby4OEP8vO0L-ij8WDP57wDNAu2bCs",
+                                  "width": "512",
+                                  "height": "288",
+                                  "alt": "バルファルク"
+                                },
+                                "children": [],
+                                "namespace": null,
+                                "count": 0,
+                                "hasWidgets": false,
+                                "hasThunks": false,
+                                "descendantHooks": false,
+                                "#type": "VirtualNode"
+                              },
+                              {
+                                "text": "              ",
+                                "#type": "VirtualText"
+                              },
+                              {
+                                "tagName": "source",
+                                "properties": {
+                                  "dataset": {},
+                                  "type": "image/webp",
+                                  "srcset": "                  https://lh3.googleusercontent.com/p9oiwh2Y81pIevlb1KZa8lCHtwJbNh5zQlNA_LkLysWSfnsxphqshXSUvNj7Jb9xwP6RNg1sBNhqbpjby4OEP8vO0L-ij8WDP57wDNAu2bCs=rw                "
+                                },
+                                "children": [],
+                                "namespace": null,
+                                "count": 0,
+                                "hasWidgets": false,
+                                "hasThunks": false,
+                                "descendantHooks": false,
+                                "#type": "VirtualNode"
+                              },
+                              { "text": " ", "#type": "VirtualText" }
+                            ],
+                            "namespace": null,
+                            "count": 5,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          {
+                            "tagName": "br",
+                            "properties": { "dataset": {} },
+                            "children": [],
+                            "namespace": null,
+                            "count": 0,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          { "text": "バルファルク", "#type": "VirtualText" }
+                        ],
+                        "namespace": null,
+                        "count": 9,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 12,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": {
+                      "dataset": {},
+                      "style": { "text-align": "center" }
+                    },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/159381780560876233.html"
+                        },
+                        "children": [
+                          { "text": "            ", "#type": "VirtualText" },
+                          {
+                            "tagName": "picture",
+                            "properties": { "dataset": {} },
+                            "children": [
+                              {
+                                "text": "              ",
+                                "#type": "VirtualText"
+                              },
+                              {
+                                "tagName": "img",
+                                "properties": {
+                                  "dataset": {},
+                                  "style": { "height": "auto" },
+                                  "className": "",
+                                  "src": "https://lh3.googleusercontent.com/OhPBGRtDNhNHbFvLf-VkoSRa29hI7ISDNRq1qguTGujhmgEjp6ppJ65S0iW85r_VB2yj8g41uhzyfxhiuddYv2vt_kl-LM1HvwLXIVbaeOGz",
+                                  "width": "512",
+                                  "height": "288",
+                                  "alt": "ヌシジンオウガ"
+                                },
+                                "children": [],
+                                "namespace": null,
+                                "count": 0,
+                                "hasWidgets": false,
+                                "hasThunks": false,
+                                "descendantHooks": false,
+                                "#type": "VirtualNode"
+                              },
+                              {
+                                "text": "              ",
+                                "#type": "VirtualText"
+                              },
+                              {
+                                "tagName": "source",
+                                "properties": {
+                                  "dataset": {},
+                                  "type": "image/webp",
+                                  "srcset": "                  https://lh3.googleusercontent.com/OhPBGRtDNhNHbFvLf-VkoSRa29hI7ISDNRq1qguTGujhmgEjp6ppJ65S0iW85r_VB2yj8g41uhzyfxhiuddYv2vt_kl-LM1HvwLXIVbaeOGz=rw                "
+                                },
+                                "children": [],
+                                "namespace": null,
+                                "count": 0,
+                                "hasWidgets": false,
+                                "hasThunks": false,
+                                "descendantHooks": false,
+                                "#type": "VirtualNode"
+                              },
+                              { "text": " ", "#type": "VirtualText" }
+                            ],
+                            "namespace": null,
+                            "count": 5,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          {
+                            "tagName": "br",
+                            "properties": { "dataset": {} },
+                            "children": [],
+                            "namespace": null,
+                            "count": 0,
+                            "hasWidgets": false,
+                            "hasThunks": false,
+                            "descendantHooks": false,
+                            "#type": "VirtualNode"
+                          },
+                          { "text": "ヌシジンオウガ", "#type": "VirtualText" }
+                        ],
+                        "namespace": null,
+                        "count": 9,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 12,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 29,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "    ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 32,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "  ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 44,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "patch": {
+        "tagName": "p",
+        "properties": { "dataset": {} },
+        "children": [
+          {
+            "text": "    アップデート3.0からは「ヌシリオレウス」と「ヌシディアブロス」を含む、全てのヌシモンスターの通常討伐クエストが登場する。2.0での解放条件から想定すると、一定以上までハンターランクを上げ、百竜夜行で一度でも該当ヌシモンスターを討伐すれば解放となりそうだ。  ",
+            "#type": "VirtualText"
+          }
+        ],
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "#type": "VirtualPatch"
+    },
+    "542": {
+      "type": 2,
+      "vNode": {
+        "tagName": "p",
+        "properties": { "dataset": {} },
+        "children": [
+          {
+            "text": "    アップデート3.0では「奇しき赫耀のバルファルク」と「ヌシジンオウガ」の2体が実装確定となった。バルファルクは『モンスターハンターダブルクロス(MHXX)』で登場したものとは異なり、よりエネルギー放出の強い変異体としての登場となった。ヌシジンオウガはMHXXの二つ名モンスター「雷公主ジンオウガ」と似た黄色の雷を放ち、3.0配信直後から通常マップでも戦闘できるようだ。  ",
+            "#type": "VirtualText"
+          }
+        ],
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "patch": {
+        "tagName": "table",
+        "properties": { "dataset": {}, "className": "related_links" },
+        "children": [
+          { "text": "    ", "#type": "VirtualText" },
+          {
+            "tagName": "tbody",
+            "properties": { "dataset": {} },
+            "children": [
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/153371666242625772.html"
+                        },
+                        "children": [
+                          {
+                            "text": "ヌシリオレウスの弱点と攻略",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/155179080503801806.html"
+                        },
+                        "children": [
+                          {
+                            "text": "ヌシディアブロスの弱点と攻略",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/137292977818069920.html"
+                        },
+                        "children": [
+                          {
+                            "text": "百竜夜行攻略の流れとクリアのコツ",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "      ", "#type": "VirtualText" },
+              {
+                "tagName": "tr",
+                "properties": { "dataset": {} },
+                "children": [
+                  { "text": "        ", "#type": "VirtualText" },
+                  {
+                    "tagName": "td",
+                    "properties": { "dataset": {} },
+                    "children": [
+                      { "text": "          ", "#type": "VirtualText" },
+                      {
+                        "tagName": "a",
+                        "properties": {
+                          "dataset": {},
+                          "href": "/MH-RISE/page/154230272735351953.html"
+                        },
+                        "children": [
+                          {
+                            "text": "ハンターランクの効率的な上げ方",
+                            "#type": "VirtualText"
+                          }
+                        ],
+                        "namespace": null,
+                        "count": 1,
+                        "hasWidgets": false,
+                        "hasThunks": false,
+                        "descendantHooks": false,
+                        "#type": "VirtualNode"
+                      },
+                      { "text": "        ", "#type": "VirtualText" }
+                    ],
+                    "namespace": null,
+                    "count": 4,
+                    "hasWidgets": false,
+                    "hasThunks": false,
+                    "descendantHooks": false,
+                    "#type": "VirtualNode"
+                  },
+                  { "text": "      ", "#type": "VirtualText" }
+                ],
+                "namespace": null,
+                "count": 7,
+                "hasWidgets": false,
+                "hasThunks": false,
+                "descendantHooks": false,
+                "#type": "VirtualNode"
+              },
+              { "text": "    ", "#type": "VirtualText" }
+            ],
+            "namespace": null,
+            "count": 37,
+            "hasWidgets": false,
+            "hasThunks": false,
+            "descendantHooks": false,
+            "#type": "VirtualNode"
+          },
+          { "text": "  ", "#type": "VirtualText" }
+        ],
+        "namespace": null,
+        "count": 40,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false,
+        "#type": "VirtualNode"
+      },
+      "#type": "VirtualPatch"
+    }
+  },
+  "variable": null,
+  "domVersion": 3
+}
