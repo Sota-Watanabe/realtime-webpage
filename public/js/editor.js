@@ -1,4 +1,4 @@
-const Serializer = require('vdom-serialize');
+const Serializer = require('@zharktas/vdom-serialize');
 const diff = require("virtual-dom/diff")
 const h = require("virtual-dom/h")
 const createElement = require("virtual-dom/create-element")

@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 const diff = require("virtual-dom/diff")
-const Serializer = require('vdom-serialize');
+const Serializer = require('@zharktas/vdom-serialize');
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
