@@ -1,3 +1,0 @@
-[submodule "lib/virtual-dom"]
-	path = lib/virtual-dom
-	url = git@github.com:Sota-Watanabe/virtual-dom.git
