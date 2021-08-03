@@ -12,11 +12,16 @@ const Serializer = require('@zharktas/vdom-serialize');
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
 
-const convertHTML = require('html-to-vdom')({
+let convertHTML = require('html-to-vdom')({
   VNode: VNode,
   VText: VText
 });
 
+convertHTML = convertHTML.bind(null, {
+  getVNodeKey: function (attributes) {
+    return attributes.key;
+  }
+});
 previousVdom = convertHTML('<body></body>')
 domVersion = 0
 domStore = []
