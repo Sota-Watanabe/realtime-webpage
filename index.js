@@ -122,7 +122,7 @@ io.on('connection', (socket) => {
     };
     socket.broadcast.emit('latestHtml', data);
     console.log('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓')
-    console.log(JSON.stringify(data))
+    console.log(JSON.stringify(data, null, '\t'))
     console.log('↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑')
     console.log(' - send! - \n\n\n')
     previousVdom = latestVdom
