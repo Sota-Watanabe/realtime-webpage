@@ -2,9 +2,13 @@ const setKey = function (vdom, vdomWithKey) {
     // console.log('vdomWithKey=', vdomWithKey)
     console.log('vdom=', vdom)
     result = walk(vdom, vdomWithKey)
-    console.log('vdom=', vdom)
-
-    return { beforeVdom: 'aaa', afterVdom: 'bbbb'};
+    if (result === undefined) {
+        console.log('not set key')
+        return vdom
+    } else {
+        console.log('set key')
+        return result
+    }
 };
 
 // target ...これを探す
@@ -14,9 +18,8 @@ function walk(target, source){
     // console.log('target=', target)
     // console.log('source.key=', source.key)
     if (isMatch(target, source)) {
-        target.key = source.key
-        console.log('set key !!!')
-        return 'match'
+        console.log('walk: target=', target)
+        return source
     } else if (source.children === undefined) {
         // console.log('none...')
         return
@@ -25,7 +28,7 @@ function walk(target, source){
         // console.log('\nvdom=', child)
         result = walk(target, child)
         if(result != undefined) {
-            return
+            return source
         }
     }
 }
