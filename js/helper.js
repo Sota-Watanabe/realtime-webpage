@@ -18,7 +18,6 @@ function walk(target, source){
     // console.log('target=', target)
     // console.log('source.key=', source.key)
     if (isMatch(target, source)) {
-        console.log('walk: target=', target)
         return source
     } else if (source.children === undefined) {
         // console.log('none...')
@@ -27,9 +26,7 @@ function walk(target, source){
     for (const child of source.children) {
         // console.log('\nvdom=', child)
         result = walk(target, child)
-        if(result != undefined) {
-            return source
-        }
+        if (result != undefined) return result
     }
 }
 
