@@ -1,16 +1,20 @@
 const setKey = function (vdom, vdomWithKey) {
-    // console.log('vdomWithKey=', vdomWithKey)
-    console.log('before vdom=', vdom)
-    result = walk(vdom, vdomWithKey)
+    searchTarget(vdom, vdomWithKey)
+
+};
+
+// targetがなかった場合、そのchildrenをsearchTargetする関数
+function searchTarget(target, source) {
+    console.log('before target=', target)
+    result = walk(target, source)
     if (result === true) {
         return true
     }
 
-    for (child of vdom.children) {
-        setKey(child, vdomWithKey)
+    for (child of target.children) {
+        searchTarget(child, source)
     }
-
-};
+}
 
 // target ...これを探す
 // source ...keyあり、検索対象
