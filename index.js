@@ -8,6 +8,7 @@ app.use(express.static('public'));
 
 const diff = require("virtual-dom/diff")
 const Serializer = require('@zharktas/vdom-serialize');
+const setKey = require('./js/helper')
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
@@ -104,6 +105,8 @@ io.on('connection', (socket) => {
 
   socket.on('onUpdateHtml', (html) => {
     latestVdom = convertHTML('<body>' + html + '</body>')
+    previousVdom = convertHTML('<p key="ptwo"> p tag two</p>')
+    let { beforeVdom, afterVdom } = setKey(previousVdom, latestVdom)
     const patches = diff(previousVdom, latestVdom);
     // console.log('patches=', JSON.stringify(patches))
     // 変更なしの場合
