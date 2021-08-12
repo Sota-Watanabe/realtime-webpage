@@ -9,11 +9,13 @@ function searchTarget(target, source) {
     result = walk(target, source)
     if (result === true) {
         return true
+    }else if(target.children === undefined) {
+        return false
     }
-
     for (child of target.children) {
         searchTarget(child, source)
     }
+    // childの違いが1だけの場合keyをセット
 }
 
 // target ...これを探す
