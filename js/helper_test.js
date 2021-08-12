@@ -1,5 +1,6 @@
 const setKey = require("./helper")
 
+const diff = require("virtual-dom/diff")
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
 let convertHTML = require('html-to-vdom')({
@@ -13,11 +14,18 @@ convertHTML = convertHTML.bind(null, {
 });
 
 const fs = require('fs');
-let withKey = fs.readFileSync("with_key.html", 'utf-8')
-
-withKey = withKey.replace(/\n/g, '')
-withKey = withKey.replace(/\t/g, '')
-vdomWithKey = convertHTML(withKey)
-vdom = convertHTML('<article><h2> h2 title</h2><p> p tag one</p><div><span>aaaa</span></div></article>')
+let withKey = fs.readFileSync("previous_with_key.html", 'utf-8')
+vdomWithKey = convertHTML(normalize(withKey))
+let latest = fs.readFileSync("latest.html", 'utf-8')
+vdom = convertHTML(normalize(latest))
+console.log('helper_test.js: before vdom=', JSON.stringify(vdom, null, '\t'))
 setKey(vdom, vdomWithKey)
-console.log('vdom=', vdom)
+console.log('helper_test.js: after vdom=', JSON.stringify(vdom, null, '\t'))
+patch = diff(vdom, vdomWithKey)
+console.log('helper_test.js: patch=', patch)
+
+function normalize (html) {
+    html = html.replace(/\n/g, '')
+    html = html.replace(/\t/g, '')
+    return html
+}
