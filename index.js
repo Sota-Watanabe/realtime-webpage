@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 const diff = require("virtual-dom/diff")
 const Serializer = require('@zharktas/vdom-serialize');
-const setKey = require('./js/helper')
+const setKey = require('./js/setkey')
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
