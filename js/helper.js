@@ -1,7 +1,36 @@
 const setKey = function (target, source) {
+    // checkOnlyChangeText(target, source)
     setMatchVNode(target, source)
-    setSimilarVNode(target, source)
+    // setSimilarVNode(target, source)
 };
+
+function checkOnlyChangeText(target, source) {
+    checkSameLocation(target, source)
+
+}
+
+function checkSameLocation(target, source) {
+    copiedTarget = JSON.parse(JSON.stringify(target))
+    copiedSource = JSON.parse(JSON.stringify(source))
+    // keyを削除
+    if (copiedSource.key !== undefined) {
+        delete copiedSource.key
+        delete copiedSource.properties.key
+    }
+    delete copiedTarget.children
+    delete copiedSource.children
+    if (JSON.stringify(copiedTarget) === JSON.stringify(copiedSource)) {
+        console.log('children 以外は一致')
+        if (target.children.length === source.children.length) {
+
+        }
+        for (child of target.children) {
+
+        }
+        checkSameLocation()
+    }
+
+}
 
 
 function setSimilarVNode(target, source) {
