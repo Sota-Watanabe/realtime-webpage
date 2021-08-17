@@ -1,4 +1,5 @@
 const setMove = require("./setmove")
+const setKey = require("./setkey")
 
 const diff = require("virtual-dom/diff")
 const VNode = require('virtual-dom/vnode/vnode');
@@ -18,6 +19,7 @@ let previous = fs.readFileSync("previous_with_key.html", 'utf-8')
 previous = convertHTML(normalize(previous))
 let latest = fs.readFileSync("latest.html", 'utf-8')
 latest = convertHTML(normalize(latest))
+setKey(previous, latest)
 patches = diff(previous, latest)
 delete patches.a
 movesObj = setMove(patches)
