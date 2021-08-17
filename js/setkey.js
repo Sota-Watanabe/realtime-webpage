@@ -87,11 +87,11 @@ function getChildrenKeys(tree) {
 // source ...keyあり、検索対象
 function walk(target, source){
     index++
-    console.log('walk: index=', index)
+    // console.log('walk: index=', index)
     // console.log('target=', target)
     // console.log('source.key=', source.key)
     if (isMatch(target, source)) {
-        console.log('match')
+        // console.log('match')
         // console.log('target=', target)
         // console.log('source=', source)
         // console.log('target==', index)

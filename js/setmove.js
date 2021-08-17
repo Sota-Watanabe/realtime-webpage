@@ -2,7 +2,7 @@ movesObj = {}
 const insert = 6
 const remove = 7
 const setMove = function (patches) {
-    console.log('patches=', JSON.stringify(patches, null, '\t'))
+    // console.log('patches=', JSON.stringify(patches, null, '\t'))
     // {
     //     abcdef: {
     //         before: nNum,
@@ -43,8 +43,8 @@ function getKey(patch) {
 function deleteMovePatch(patches) {
     for (const moveKey in movesObj) {
         if (movesObj[moveKey]['before'] && movesObj[moveKey]['after']) {
-            console.log('moveKey=', moveKey)
-            console.log('patches=', patches)
+            // console.log('moveKey=', moveKey)
+            // console.log('patches=', patches)
             for (const nNum in patches) {
                 if (Array.isArray(patches[nNum])){
                     let i = 0
@@ -57,10 +57,10 @@ function deleteMovePatch(patches) {
                     }
                 }
                 if (isMovedPatch(patches[nNum], moveKey)) {
-                    console.log('delete')
-                    console.log('before patches=', patches)
+                    // console.log('delete')
+                    // console.log('before patches=', patches)
                     delete patches[nNum]
-                    console.log('after patches=', patches)
+                    // console.log('after patches=', patches)
                 }
             }
         }
@@ -69,14 +69,14 @@ function deleteMovePatch(patches) {
 
 function isMovedPatch(patch, key) {
     patchKey = getKey(patch)
-    if (patchKey === key) return true
+    if (patchKey == key) return true
     return false
 }
 
 
 function setMoveList(key, nNum, type, patches) {
     if (movesObj[key]) { // 前のがある
-        console.log(movesObj[key])
+        // console.log(movesObj[key])
         if (type === insert) {
             movesObj[key].after = nNum
         } else {
