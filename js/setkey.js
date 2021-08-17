@@ -1,3 +1,4 @@
+index = -1
 const setKey = function (target, source) {
     // checkOnlyChangeText(target, source)
     setMatchVNode(target, source)
@@ -51,11 +52,10 @@ function setSimilarVNode(target, source) {
 
 // targetがなかった場合、そのchildrenをsetMatchVNodeする関数
 function setMatchVNode(target, source) {
-    console.log('start setMatchVNode: target.tagname=', target.tagName)
+    index = -1
     result = walk(target, source)
     if (result === true) {
         // 個要素も同じなのでやる必要なし
-        // console.log('result === true')
         return true
     }else if(target.children === undefined) {
         return false
@@ -86,13 +86,19 @@ function getChildrenKeys(tree) {
 // target ...これを探す
 // source ...keyあり、検索対象
 function walk(target, source){
-    // console.log('\n\nstart walk')
+    index++
+    console.log('walk: index=', index)
     // console.log('target=', target)
     // console.log('source.key=', source.key)
     if (isMatch(target, source)) {
-        target.key = source.key
-        target.properties = source.properties
-        target.children = source.children
+        console.log('match')
+        // console.log('target=', target)
+        // console.log('source=', source)
+        // console.log('target==', index)
+        target.key = index
+        source.key = index
+        target.properties['key'] = index
+        source.properties['key'] = index
         return true
     } else if (source.children === undefined) {
         // console.log('none...')
@@ -107,7 +113,7 @@ function walk(target, source){
 function isMatch(target, source) {
     // 参照値渡しになってしまうのでコピー
     copiedSource = JSON.parse(JSON.stringify(source))
-    setKeyUndefined(copiedSource)
+    // setKeyUndefined(copiedSource)
     return JSON.stringify(target) === JSON.stringify(copiedSource)
 }
 
