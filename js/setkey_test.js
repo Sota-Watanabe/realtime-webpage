@@ -19,10 +19,11 @@ vdomWithKey = convertHTML(normalize(withKey))
 let latest = fs.readFileSync("latest.html", 'utf-8')
 vdom = convertHTML(normalize(latest))
 // console.log('helper_test.js: before vdom=', JSON.stringify(vdom, null, '\t'))
-// setKey(vdom, vdomWithKey)
+setKey(vdom, vdomWithKey)
 // console.log('helper_test.js: after vdom=', JSON.stringify(vdom, null, '\t'))
-patch = diff(vdomWithKey, vdom)
-console.log('helper_test.js: patch=', JSON.stringify(patch, null, '\t'))
+patches = diff(vdomWithKey, vdom)
+// delete patches.a
+console.log('helper_test.js: patch=', JSON.stringify(patches, null, '\t'))
 
 function normalize (html) {
     html = html.replace(/\n/g, '')
