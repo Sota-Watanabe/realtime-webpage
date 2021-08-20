@@ -6,3 +6,4 @@ bundle_editor.js
 serializedPatches.json
 # Local Netlify folder
 .netlify
+*.log
