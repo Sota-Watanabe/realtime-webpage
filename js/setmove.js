@@ -50,15 +50,13 @@ function deleteMovePatch(patches) {
                     let i = 0
                     for (patch of patches[nNum]) {
                         const key = getKey(patch)
-                        if (moveKey === key) {
+                        if (moveKey == key) {
                             patches[nNum].splice(i, 1)
                         }
                         i++
                     }
                 }
                 if (isMovedPatch(patches[nNum], moveKey)) {
-                    // console.log('delete')
-                    // console.log('before patches=', patches)
                     delete patches[nNum]
                     // console.log('after patches=', patches)
                 }
