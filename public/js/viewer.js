@@ -11,9 +11,9 @@ const convertHTML = require('html-to-vdom')({
   VNode: VNode,
   VText: VText
 });
-const article = h("article")
-articleNode = createElement(article)
-document.body.appendChild(articleNode)
+const original = h("original")
+originalNode = createElement(original)
+document.body.appendChild(originalNode)
 let domVersion = 0
 
 socket.on('connect', function () {
@@ -26,10 +26,10 @@ socket.on("latestHtml", (data) => {
   domVersion = data.domVersion
   console.log('vdom=', data.vdom)
   var serialized = Serializer.deserializePatches(data.vdom);
-  const myDom = document.getElementsByTagName('article')[0].outerHTML
+  const myDom = document.getElementsByTagName('original')[0].outerHTML
   myVdom = convertHTML(myDom)
   serialized.a = myVdom
-  patch(articleNode, serialized);
+  patch(originalNode, serialized);
 });
 
 // socket.on("editingStatus", (status) => {

@@ -23,7 +23,7 @@ convertHTML = convertHTML.bind(null, {
     return attributes.key;
   }
 });
-previousVdom = convertHTML('<body></body>')
+previousVdom = convertHTML('<original></original>')
 domVersion = 0
 domStore = []
 let editingStatus = false
@@ -45,7 +45,7 @@ app.post('/', (req, res) => {
   html = req.body.post.post_content
   html = html.replace(/<!--.+? -->/g, '')
 
-  latestVdom = convertHTML('<body>' + html + '</body>')
+  latestVdom = convertHTML('<original>' + html + '</original>')
   console.log('latestVdom=', latestVdom)
   const patches = diff(previousVdom, latestVdom);
   // console.log('patches=', JSON.stringify(patches))
@@ -104,9 +104,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('onUpdateHtml', (html) => {
-    latestVdom = convertHTML('<body>' + html + '</body>')
-    previousVdom = convertHTML('<p key="ptwo"> p tag two</p>')
-    let { beforeVdom, afterVdom } = setKey(previousVdom, latestVdom)
+    latestVdom = convertHTML('<original>' + html + '</original>')
     const patches = diff(previousVdom, latestVdom);
     // console.log('patches=', JSON.stringify(patches))
     // 変更なしの場合
