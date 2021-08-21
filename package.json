@@ -12,10 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vdom-serialize": "./lib/vdom-serialize",
     "express": "^4.17.1",
     "html-to-vdom": "^0.5.0",
+    "lodash": "^4.17.21",
     "socket.io": "^3.0.4",
+    "vdom-serialize": "./lib/vdom-serialize",
     "virtual-dom": "./lib/virtual-dom"
   }
 }
