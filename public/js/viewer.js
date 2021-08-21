@@ -1,4 +1,4 @@
-const Serializer = require('@zharktas/vdom-serialize');
+const Serializer = require('vdom-serialize');
 const h = require("virtual-dom/h")
 const createElement = require("virtual-dom/create-element")
 const socket = io();
@@ -6,6 +6,7 @@ const patch = require('virtual-dom/patch');
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
+const expandMove = require('../../js/expandmove');
 
 const convertHTML = require('html-to-vdom')({
   VNode: VNode,
@@ -29,6 +30,8 @@ socket.on("latestHtml", (data) => {
   const myDom = document.getElementsByTagName('original')[0].outerHTML
   myVdom = convertHTML(myDom)
   serialized.a = myVdom
+  const movesObj = data.movesObj
+  expandMove(serialized, movesObj, myVdom)
   patch(originalNode, serialized);
 });
 

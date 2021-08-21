@@ -7,11 +7,12 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 const diff = require("virtual-dom/diff")
-const Serializer = require('@zharktas/vdom-serialize');
+const Serializer = require('vdom-serialize');
 const setKey = require('./js/setkey')
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
+const setMove = require('./js/setmove');
 
 let convertHTML = require('html-to-vdom')({
   VNode: VNode,
@@ -104,7 +105,12 @@ io.on('connection', (socket) => {
   });
 
   socket.on('onUpdateHtml', (html) => {
+    // 自作editor用
+
     latestVdom = convertHTML('<original>' + html + '</original>')
+
+    setKey(previousVdom, latestVdom)
+
     const patches = diff(previousVdom, latestVdom);
     // console.log('patches=', JSON.stringify(patches))
     // 変更なしの場合
@@ -114,9 +120,15 @@ io.on('connection', (socket) => {
     }
     const serializedPatches = Serializer.serializePatches(patches);
     delete serializedPatches.a
+
+    // movesObjの作成
+    movesObj = setMove(patches)
+
+
     // ストアに追加
     domStore.push(latestVdom)
     const data = {
+      movesObj: movesObj,
       vdom: serializedPatches,
       variable: null,
       domVersion: domStore.length
