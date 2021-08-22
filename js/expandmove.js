@@ -45,7 +45,7 @@ function walk(tree, vNum) {
 function appendPatch(apply, patch) {
     if (apply) {
         if (isArray(apply)) {
-            apply.push(patch)
+            apply.unshift(patch)
         } else {
             apply = [apply, patch]
         }
