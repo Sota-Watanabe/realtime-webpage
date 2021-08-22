@@ -1,4 +1,3 @@
-index = -1
 const setKey = function (target, source) {
     // checkOnlyChangeText(target, source)
     setMatchVNode(target, source)
@@ -86,7 +85,7 @@ function getChildrenKeys(tree) {
 // target ...これを探す
 // source ...keyあり、検索対象
 function walk(target, source){
-    index++
+    index = Math.random().toString(32).substring(2)
     // console.log('walk: index=', index)
     // console.log('target=', target)
     // console.log('source.key=', source.key)
