@@ -91,14 +91,16 @@ function walk(target, source){
     // console.log('target=', target)
     // console.log('source.key=', source.key)
     if (isMatch(target, source)) {
-        // console.log('match')
+        // console.log('match!!!!!')
         // console.log('target=', target)
         // console.log('source=', source)
         // console.log('target==', index)
         target.key = index
         source.key = index
-        target.properties['key'] = index
-        source.properties['key'] = index
+        if (target.properties != undefined) {
+            target.properties['key'] = index
+            source.properties['key'] = index
+        }
         return true
     } else if (source.children === undefined) {
         // console.log('none...')
