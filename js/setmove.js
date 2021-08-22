@@ -1,26 +1,26 @@
 movesObj = {}
 const insert = 6
 const remove = 7
-const setMove = function (patches) {
-    // console.log('patches=', JSON.stringify(patches, null, '\t'))
-    // {
-    //     abcdef: {
-    //         before: nNum,
-    //         after: nNum,
-    //     }
-    // }
 
-    // キーにノード番号を入れる(setKeyで!!! )
+const setMove = function (patches) {
+    movesObj = {} // 初期化
+    getMovesObj(patches)
+    return movesObj
+}
+
+const getMovesObj = function (patches) {
+
+
     for (const nNum in patches) {
+        // 配列の場合は自身をもう一度呼ぶ (別に再帰である必要はない)
         if (Array.isArray(patches[nNum])){
             for (patch of patches[nNum]) {
                 const obj = {}
                 obj[nNum] = patch
-                setMove(obj)
+                getMovesObj(obj)
             }
         }
         const type = patches[nNum].type
-        let key = undefined
         key = getKey(patches[nNum])
         if (key !== undefined) {
             setMoveList(key, nNum, type, patches)
