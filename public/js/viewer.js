@@ -25,26 +25,12 @@ socket.on("latestHtml", (data) => {
   console.log("received sync event", data.vdom);
   console.log("received domVersion", data.domVersion);
   domVersion = data.domVersion
-  console.log('vdom=', data.vdom)
-  var serialized = Serializer.deserializePatches(data.vdom);
+  var patches = Serializer.deserializePatches(data.vdom);
   const myDom = document.getElementsByTagName('original')[0].outerHTML
   myVdom = convertHTML(myDom)
-  serialized.a = myVdom
+  patches.a = myVdom
   const movesObj = data.movesObj
-  expandMove(serialized, movesObj, myVdom)
-  patch(originalNode, serialized);
+  expandMove(patches, movesObj, myVdom)
+  patch(originalNode, patches);
 });
 
-// socket.on("editingStatus", (status) => {
-//   console.log("status=", status);
-//   const editingHeader = document.getElementById('editingHeader')
-//   const body = document.getElementsByTagName("BODY")[0];
-//   console.log('start if')
-//   if(status === true) {
-//     editingHeader.classList.remove('hidden')
-//     body.classList.add('header-margin')
-//   } else {
-//     editingHeader.classList.add('hidden')
-//     body.classList.remove('header-margin')
-//   }
-// });
