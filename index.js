@@ -113,8 +113,8 @@ io.on('connection', (socket) => {
     // キーなしVdomを比較するためtempしておく
     let tempVdom = _.cloneDeep(latestVdom);
     setKey(previousVdom, latestVdom)
-
-    const patches = diff(previousVdom, latestVdom);
+    let patches = {}
+    patches = diff(previousVdom, latestVdom);
     // console.log('patches=', JSON.stringify(patches))
     // 変更なしの場合
 
@@ -125,12 +125,12 @@ io.on('connection', (socket) => {
       console.log("patchの変更なし")
       return;
     }
-    const serializedPatches = Serializer.serializePatches(_.cloneDeep(patches));
-    delete serializedPatches.a
 
     // movesObjの作成
     movesObj = setMove(patches)
-
+    console.log('movesObj=', movesObj)
+    const serializedPatches = Serializer.serializePatches(_.cloneDeep(patches));
+    delete serializedPatches.a
 
     // ストアに追加
     domStore.push(latestVdom)
@@ -141,10 +141,6 @@ io.on('connection', (socket) => {
       domVersion: domStore.length
     };
     socket.broadcast.emit('latestHtml', data);
-    console.log('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓')
-    console.log(JSON.stringify(data, null, '\t'))
-    console.log('↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑')
-    console.log(' - send! - \n\n\n')
   });
 
   socket.on('checkDomVersion', (domVersion) => {
