@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+const _ = require('lodash')
+
 const diff = require("virtual-dom/diff")
 const Serializer = require('vdom-serialize');
 const setKey = require('./js/setkey')
@@ -24,7 +26,7 @@ convertHTML = convertHTML.bind(null, {
     return attributes.key;
   }
 });
-previousVdom = convertHTML('<original></original>')
+let previousVdom = convertHTML('<original></original>')
 domVersion = 0
 domStore = []
 let editingStatus = false
@@ -108,17 +110,22 @@ io.on('connection', (socket) => {
     // 自作editor用
 
     latestVdom = convertHTML('<original>' + html + '</original>')
-
+    // キーなしVdomを比較するためtempしておく
+    let tempVdom = _.cloneDeep(latestVdom);
     setKey(previousVdom, latestVdom)
 
     const patches = diff(previousVdom, latestVdom);
     // console.log('patches=', JSON.stringify(patches))
     // 変更なしの場合
+
+    // 次の呼び出しの備え、previousを更新
+    previousVdom = tempVdom
+
     if (Object.keys(patches).length == 1) {
       console.log("patchの変更なし")
       return;
     }
-    const serializedPatches = Serializer.serializePatches(patches);
+    const serializedPatches = Serializer.serializePatches(_.cloneDeep(patches));
     delete serializedPatches.a
 
     // movesObjの作成
@@ -138,7 +145,6 @@ io.on('connection', (socket) => {
     console.log(JSON.stringify(data, null, '\t'))
     console.log('↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑')
     console.log(' - send! - \n\n\n')
-    previousVdom = latestVdom
   });
 
   socket.on('checkDomVersion', (domVersion) => {
