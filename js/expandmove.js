@@ -1,6 +1,7 @@
 const VPatch = require("virtual-dom/vnode/vpatch")
 var isArray = require("x-is-array")
 
+let index
 const expandMove = function (patches, movesObj, vdom) {
     // console.log('expandMove: patches=', JSON.stringify(patches, null, '\t'))
     // console.log('expandMove: movesObj=', JSON.stringify(movesObj, null, '\t'))
@@ -20,10 +21,10 @@ const expandMove = function (patches, movesObj, vdom) {
 
 
 function getVnode(vNum, vdom) {
+    index = -1
     return walk(vdom, vNum)
 }
 
-let index = -1
 function walk(tree, vNum) {
     index++
     if (index == vNum) {
