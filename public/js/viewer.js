@@ -8,6 +8,8 @@ const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
 const expandMove = require('../../js/expandmove');
 
+const _ = require('lodash')
+
 const convertHTML = require('html-to-vdom')({
   VNode: VNode,
   VText: VText
@@ -22,7 +24,9 @@ socket.on('connect', function () {
 });
 
 socket.on("latestHtml", (data) => {
-  console.log("received sync event", data.vdom);
+  let tempVdom = _.cloneDeep(data.vdom);
+  console.log("received patches =", tempVdom);
+  console.log("received movesobj=", data.movesObj);
   console.log("received domVersion", data.domVersion);
   domVersion = data.domVersion
   var patches = Serializer.deserializePatches(data.vdom);
@@ -30,7 +34,7 @@ socket.on("latestHtml", (data) => {
   myVdom = convertHTML(myDom)
   patches.a = myVdom
   const movesObj = data.movesObj
-  expandMove(patches, movesObj, myVdom)
+  // expandMove(patches, movesObj, myVdom)
   patch(originalNode, patches);
 });
 
