@@ -34,7 +34,9 @@ socket.on("latestHtml", (data) => {
   myVdom = convertHTML(myDom)
   patches.a = myVdom
   const movesObj = data.movesObj
-  // expandMove(patches, movesObj, myVdom)
+  expandMove(patches, movesObj, myVdom)
+  console.log("expanded patches =", patches);
   patch(originalNode, patches);
+  console.log('end of patch')
 });
 
