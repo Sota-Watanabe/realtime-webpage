@@ -5,6 +5,17 @@ const remove = 7
 const setMove = function (patches) {
     movesObj = {} // 初期化
     getMovesObj(patches)
+
+    for (const key in movesObj) {
+        if ('before' in movesObj[key] && 'after' in movesObj[key]) {
+            console.log('through')
+        } else {
+            console.log(movesObj[key])
+            delete movesObj[key]
+            console.log('delete')
+        }
+    }
+    console.log('movesObj=', movesObj)
     return movesObj
 }
 
@@ -80,7 +91,10 @@ function setMoveList(key, nNum, type, patches) {
         } else {
             movesObj[key].before = nNum
         }
-        deleteMovePatch(patches)
+        if ('before' in movesObj[key] && 'after' in movesObj[key]) {
+            console.log('ahahahahahhaah')
+            deleteMovePatch(patches)
+        }
     } else {
         if (type === insert) {
             movesObj[key] = { after: nNum}
