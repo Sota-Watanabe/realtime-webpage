@@ -6,7 +6,8 @@ const patch = require('virtual-dom/patch');
 
 const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
-const expandMove = require('../../js/expandmove');
+const expandMove = require('../../js/expandMove');
+const expandVNode = require('../../js/expandVNode');
 
 const _ = require('lodash')
 
@@ -35,7 +36,10 @@ socket.on("latestHtml", (data) => {
   patches.a = myVdom
   const movesObj = data.movesObj
   expandMove(patches, movesObj, myVdom)
-  console.log("expanded patches =", patches);
+  // console.log('mydom=', myVdom)
+  // console.log("expanded patches =", patches);
+  expandVNode(patches, myVdom)
+  console.log('patches=', patches)
   patch(originalNode, patches);
   console.log('end of patch')
 });
