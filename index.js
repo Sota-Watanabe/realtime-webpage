@@ -16,6 +16,8 @@ const VNode = require('virtual-dom/vnode/vnode');
 const VText = require('virtual-dom/vnode/vtext');
 const setMove = require('./js/setmove');
 
+const deleteVNode = require('./js/deletevnode')
+
 let convertHTML = require('html-to-vdom')({
   VNode: VNode,
   VText: VText
@@ -128,7 +130,10 @@ io.on('connection', (socket) => {
 
     // movesObjの作成
     movesObj = setMove(patches)
-    console.log('movesObj=', movesObj)
+
+    // vNodeの削除
+    deleteVNode(patches)
+    console.log('patches=', patches)
     const serializedPatches = Serializer.serializePatches(_.cloneDeep(patches));
     delete serializedPatches.a
 
