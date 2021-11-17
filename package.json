@@ -7,11 +7,12 @@
     "start": "npm run bundle && node index.js",
     "devstart": "node index.js",
     "logstart": "npm run bundle && node index.js > log/logstart.log",
-    "bundle": "browserify public/js/viewer.js -o public/js/dist/bundle_viewer.js && browserify public/js/editor.js -o public/js/dist/bundle_editor.js"
+    "bundle": "npx browserify public/js/viewer.js -o public/js/dist/bundle_viewer.js && npx browserify public/js/editor.js -o public/js/dist/bundle_editor.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^17.0.0",
     "diff": "^5.0.0",
     "express": "^4.17.1",
     "html-to-vdom": "^0.5.0",
