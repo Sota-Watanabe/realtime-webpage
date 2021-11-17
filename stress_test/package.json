@@ -1,0 +1,20 @@
+{
+  "name": "stress_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "socketio_index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node socketio_index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "artillery": "^2.0.0-5",
+    "express": "^4.17.1",
+    "iocat": "^0.4.1",
+    "socket.io": "^4.3.2",
+    "ws": "^8.2.3",
+    "wscat": "^5.0.0"
+  }
+}
