@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "diff": "^5.0.0",
     "express": "^4.17.1",
     "html-to-vdom": "^0.5.0",
     "lodash": "^4.17.21",

@@ -1,0 +1,117 @@
+{
+  "0": {
+    "type": 5,
+    "vNode": {
+      "tagName": "original",
+      "properties": {
+        "dataset": {}
+      },
+      "children": [
+        {
+          "tagName": "h1",
+          "properties": {
+            "dataset": {},
+            "key": "cjr394n9er8"
+          },
+          "children": [
+            {
+              "text": "fdsaf"
+            }
+          ],
+          "key": "cjr394n9er8",
+          "namespace": null,
+          "count": 1,
+          "hasWidgets": false,
+          "hasThunks": false,
+          "descendantHooks": false
+        },
+        {
+          "tagName": "h2",
+          "properties": {
+            "dataset": {},
+            "key": "epuahsk01l8"
+          },
+          "children": [
+            {
+              "text": "fdsaffd"
+            }
+          ],
+          "key": "epuahsk01l8",
+          "namespace": null,
+          "count": 1,
+          "hasWidgets": false,
+          "hasThunks": false,
+          "descendantHooks": false
+        }
+      ],
+      "namespace": null,
+      "count": 4,
+      "hasWidgets": false,
+      "hasThunks": false,
+      "descendantHooks": false
+    },
+    "patch": {
+      "removes": [
+        {
+          "from": 1,
+          "key": "epuahsk01l8"
+        }
+      ],
+      "inserts": [
+        {
+          "key": "epuahsk01l8",
+          "to": 0
+        }
+      ]
+    }
+  },
+  "a": {
+    "tagName": "original",
+    "properties": {
+      "dataset": {}
+    },
+    "children": [
+      {
+        "tagName": "h1",
+        "properties": {
+          "dataset": {},
+          "key": "cjr394n9er8"
+        },
+        "children": [
+          {
+            "text": "fdsaf"
+          }
+        ],
+        "key": "cjr394n9er8",
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false
+      },
+      {
+        "tagName": "h2",
+        "properties": {
+          "dataset": {},
+          "key": "epuahsk01l8"
+        },
+        "children": [
+          {
+            "text": "fdsaffd"
+          }
+        ],
+        "key": "epuahsk01l8",
+        "namespace": null,
+        "count": 1,
+        "hasWidgets": false,
+        "hasThunks": false,
+        "descendantHooks": false
+      }
+    ],
+    "namespace": null,
+    "count": 4,
+    "hasWidgets": false,
+    "hasThunks": false,
+    "descendantHooks": false
+  }
+}
