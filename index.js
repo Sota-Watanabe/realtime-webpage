@@ -28,7 +28,11 @@ convertHTML = convertHTML.bind(null, {
     return attributes.key;
   }
 });
+
+const Diff = require('diff')
+
 let previousVdom = convertHTML('<original></original>')
+let previousHTML = ""
 domVersion = 0
 domStore = []
 let editingStatus = false
@@ -51,7 +55,7 @@ app.post('/', (req, res) => {
   html = html.replace(/<!--.+? -->/g, '')
 
   latestVdom = convertHTML('<original>' + html + '</original>')
-  console.log('latestVdom=', latestVdom)
+  // console.log('latestVdom=', latestVdom)
   const patches = diff(previousVdom, latestVdom);
   // console.log('patches=', JSON.stringify(patches))
   // 変更なしの場合
@@ -78,26 +82,28 @@ app.post('/', (req, res) => {
 });
 
 http.listen(3000, () => {
-  console.log('listening on *:3000');
+  // console.log('listening on *:3000');
 });
 
 io.on('connection', (socket) => {
   let admin = false;
-  console.log('a user connected');
-  io.to(socket.id).emit('editingStatus', editingStatus);
+  // socket.broadcast.emit('Hello');
+  // console.log('a user connected');
+  // console.log("suggestData, virtualData, reloadData")
+  // io.to(socket.id).emit('editingStatus', editingStatus);
 
-  socket.on('startEditing', (status) => {
-    editingStatus = true
+  socket.on('`start`Editing', (status) => {
+    // editingStatus = true
     admin = true;
     console.log('receive status from editor', status)
-    socket.broadcast.emit('editingStatus', true);
+    // socket.broadcast.emit('editingStatus', true);
   });
 
   socket.on('disconnect', () => {
-    if (admin === true){
+    if (admin === true) {
       editingStatus = false
       // admin = false; なくてもいい
-      socket.broadcast.emit('editingStatus', false);
+      // socket.broadcast.emit('editingStatus', false);
     }
     console.log('user disconnected');
   });
@@ -110,42 +116,79 @@ io.on('connection', (socket) => {
 
   socket.on('onUpdateHtml', (html) => {
     // 自作editor用
-
+    // console.log(html)
+    html = html.replace(/\r?\n/g,"")
+    // console.log(html)
     latestVdom = convertHTML('<original>' + html + '</original>')
     // キーなしVdomを比較するためtempしておく
     let tempVdom = _.cloneDeep(latestVdom);
-    setKey(previousVdom, latestVdom)
-    let patches = {}
-    patches = diff(previousVdom, latestVdom);
-    // console.log('patches=', JSON.stringify(patches))
-    // 変更なしの場合
 
+    let virtualLatest = _.cloneDeep(latestVdom);
+    let suggestLatest = _.cloneDeep(latestVdom);
+
+    // let reloadprevious = _.cloneDeep(previousVdom); reloadLatestのデータ量のみ計測なので不要
+    let virtualPrevious = _.cloneDeep(previousVdom);
+    let suggestPrevious = _.cloneDeep(previousVdom);
+
+    // setKey(suggestPrevious, suggestLatest)
+    // console.log('suggestprevious=', JSON.stringify(suggestprevious))
+    // console.log('virtualprevious=', JSON.stringify(virtualprevious))
+
+    let patches = {}
+    virtualPatches = diff(virtualPrevious, virtualLatest);
+    suggestPatches = diff(suggestPrevious, suggestLatest);
     // 次の呼び出しの備え、previousを更新
     previousVdom = tempVdom
 
-    if (Object.keys(patches).length == 1) {
-      console.log("patchの変更なし")
-      return;
-    }
+    // if (Object.keys(patches).length == 1) {
+    //   console.log("patchの変更なし")
+    //   return;
+    // }
 
     // movesObjの作成
-    movesObj = setMove(patches)
-
+    // suggestMovesObj = setMove(suggestPatches)
+    suggestMovesObj = {}
     // vNodeの削除
-    deleteVNode(patches)
-    console.log('patches=', patches)
-    const serializedPatches = Serializer.serializePatches(_.cloneDeep(patches));
-    delete serializedPatches.a
+    deleteVNode(suggestPatches)
+    delete suggestPatches.a
+    // console.log("\n\nsuggestPatches=", JSON.stringify(suggestPatches))
+
+    const suggestSerializedPatches = Serializer.serializePatches(suggestPatches);
+    const virtualSerializedPatches = Serializer.serializePatches(virtualPatches);
+    // aを削除
+    delete suggestSerializedPatches.a
+
 
     // ストアに追加
-    domStore.push(latestVdom)
-    const data = {
-      movesObj: movesObj,
-      vdom: serializedPatches,
+    // domStore.push(latestVdom)
+    const suggestData = {
+      movesObj: suggestMovesObj,
+      vdom: suggestSerializedPatches,
       variable: null,
       domVersion: domStore.length
     };
-    socket.broadcast.emit('latestHtml', data);
+
+    const virtualData = {
+      movesObj: null,
+      vdom: virtualSerializedPatches,
+      variable: null,
+      domVersion: domStore.length
+    }
+
+    const reloadData = {
+      rawHtml: '<original>' + html + '</original>'
+    }
+
+    diffHTMLData = ""
+    // console.log('start of diffHTML')
+    // diffHTMLData = diffHTML(previousHTML, html)
+    // console.log('end of diffHTML')
+    previousHTML = html
+    // console.log(JSON.stringify(suggestData))
+    // console.log(JSON.stringify(suggestData))
+    // console.log(JSON.stringify(reloadData))
+    console.log(memorySizeOf(suggestData),",",memorySizeOf(virtualData),",",memorySizeOf(reloadData))
+    // console.log(memorySizeOf(suggestData),",",memorySizeOf(virtualData),",",memorySizeOf(reloadData), memorySizeOf(diffHTMLData))
   });
 
   socket.on('checkDomVersion', (domVersion) => {
@@ -156,7 +199,7 @@ io.on('connection', (socket) => {
     if (domStore.length !== domVersion) {
       console.log("update dom from current dom")
       // 初めてアクセスしたとき
-      if(domVersion == 0) {
+      if (domVersion == 0) {
         console.log('first access')
         currentVdom = convertHTML('<body></body>')
       }
@@ -179,3 +222,54 @@ io.on('connection', (socket) => {
     }
   });
 });
+
+function diffHTML(previousHTML, html) {
+  const diffObj = Diff.diffChars(previousHTML, html)
+  console.log(diffObj)
+  for (obj of diffObj){
+    console.log(obj["added"])
+    if ((obj["added"] == true )|| (obj["added"] == true)){
+      return obj.value
+    }
+  }
+  return ''
+}
+
+function memorySizeOf(obj) {
+  var bytes = 0;
+
+  function sizeOf(obj) {
+      if(obj !== null && obj !== undefined) {
+          switch(typeof obj) {
+          case 'number':
+              bytes += 8;
+              break;
+          case 'string':
+              bytes += obj.length * 2;
+              break;
+          case 'boolean':
+              bytes += 4;
+              break;
+          case 'object':
+              var objClass = Object.prototype.toString.call(obj).slice(8, -1);
+              if(objClass === 'Object' || objClass === 'Array') {
+                  for(var key in obj) {
+                      if(!obj.hasOwnProperty(key)) continue;
+                      sizeOf(obj[key]);
+                  }
+              } else bytes += obj.toString().length * 2;
+              break;
+          }
+      }
+      return bytes;
+  };
+
+  function formatByteSize(bytes) {
+      if(bytes < 1024) return bytes + " bytes";
+      else if(bytes < 1048576) return(bytes / 1024).toFixed(3) + " KiB";
+      else if(bytes < 1073741824) return(bytes / 1048576).toFixed(3) + " MiB";
+      else return(bytes / 1073741824).toFixed(3) + " GiB";
+  };
+
+  return formatByteSize(sizeOf(obj));
+};
