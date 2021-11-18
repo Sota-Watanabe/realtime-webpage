@@ -88,9 +88,7 @@ http.listen(3000, () => {
 io.on('connection', (socket) => {
   console.log('connect: ',socket.client.conn.server.clientsCount);
   let admin = false;
-  // socket.broadcast.emit('Hello');
-  // console.log('a user connected');
-  // console.log("suggestData, virtualData, reloadData")
+  console.log("suggestData, virtualData, reloadData")
   // io.to(socket.id).emit('editingStatus', editingStatus);
 
   socket.on('`start`Editing', (status) => {
@@ -182,15 +180,12 @@ io.on('connection', (socket) => {
     }
 
     diffHTMLData = ""
-    // console.log('start of diffHTML')
-    // diffHTMLData = diffHTML(previousHTML, html)
-    // console.log('end of diffHTML')
     previousHTML = html
     // console.log(JSON.stringify(suggestData))
     // console.log(JSON.stringify(suggestData))
     // console.log(JSON.stringify(reloadData))
     console.log(memorySizeOf(suggestData),",",memorySizeOf(virtualData),",",memorySizeOf(reloadData))
-    // console.log(memorySizeOf(suggestData),",",memorySizeOf(virtualData),",",memorySizeOf(reloadData), memorySizeOf(diffHTMLData))
+    socket.broadcast.emit('latestHtml', suggestData);
   });
 
   socket.on('checkDomVersion', (domVersion) => {
