@@ -47,6 +47,10 @@ app.get('/viewer', (req, res) => {
 app.get('/editor', (req, res) => {
   res.sendFile(__dirname + '/public/editor.html');
 });
+app.get('/test-editor', (req, res) => {
+  res.sendFile(__dirname + '/public/test_editor.html');
+});
+
 app.post('/', (req, res) => {
 
   // wordpress用
@@ -116,7 +120,7 @@ io.on('connection', (socket) => {
 
   socket.on('onUpdateHtml', (html) => {
     // 自作editor用
-    console.log(html)
+    // console.log(html)
     html = html.replace(/\r?\n/g,"")
     // console.log(html)
     latestVdom = convertHTML('<original>' + html + '</original>')
@@ -130,7 +134,7 @@ io.on('connection', (socket) => {
     let virtualPrevious = _.cloneDeep(previousVdom);
     let suggestPrevious = _.cloneDeep(previousVdom);
 
-    // setKey(suggestPrevious, suggestLatest)
+    setKey(suggestPrevious, suggestLatest)
     // console.log('suggestprevious=', JSON.stringify(suggestprevious))
     // console.log('virtualprevious=', JSON.stringify(virtualprevious))
 
@@ -160,7 +164,7 @@ io.on('connection', (socket) => {
 
 
     // ストアに追加
-    // domStore.push(latestVdom)
+    domStore.push(latestVdom)
     const suggestData = {
       movesObj: suggestMovesObj,
       vdom: suggestSerializedPatches,
@@ -183,7 +187,7 @@ io.on('connection', (socket) => {
     previousHTML = html
     // console.log(JSON.stringify(suggestData))
     // console.log(JSON.stringify(suggestData))
-    // console.log(JSON.stringify(reloadData))
+    console.log(JSON.stringify(reloadData))
     console.log(memorySizeOf(suggestData),",",memorySizeOf(virtualData),",",memorySizeOf(reloadData))
     socket.broadcast.emit('latestHtml', suggestData);
   });
