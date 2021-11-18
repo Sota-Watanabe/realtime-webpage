@@ -1,3 +1,6 @@
+# コマンド
+npx artillery run socketio_senario.yml 
+
 # socket_index
 問題なし
 ```yml
@@ -16,7 +19,7 @@ scenarios:
 
 
 # index
-問題なし
+問題なし、挿入削除も大丈夫
 ```yml
 config:
   target: "http://localhost:3000"
