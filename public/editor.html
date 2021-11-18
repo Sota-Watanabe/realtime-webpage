@@ -10,6 +10,7 @@
     <h1>editor page</h1>
     <textarea id="text" name="area1" class="sample3" cols="40" rows="8" placeholder="HTMLを入力してください"></textarea>
     <input type="button" value="仮想DOMリセット" onclick="socket.emit('resetVdom');"><br>
+    <button type="button" onclick="updateTextarea()">submit text!</button>
   </body>
   <script language="javascript" type="text/javascript">
     document.getElementById("text").onkeydown = (e) => {
