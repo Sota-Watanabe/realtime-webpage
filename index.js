@@ -80,6 +80,7 @@ http.listen(3000, () => {
 });
 
 io.on('connection', (socket) => {
+  console.log('connect: ',socket.client.conn.server.clientsCount);
   let admin = false;
   console.log('a user connected');
   io.to(socket.id).emit('editingStatus', editingStatus);
@@ -92,7 +93,8 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    if (admin === true){
+    console.log('disconnect: ',socket.client.conn.server.clientsCount);
+    if (admin === true) {
       editingStatus = false
       // admin = false; なくてもいい
       socket.broadcast.emit('editingStatus', false);
@@ -108,7 +110,9 @@ io.on('connection', (socket) => {
 
   socket.on('onUpdateHtml', (html) => {
     // 自作editor用
-
+    console.log(html)
+    html = html.replace(/\r?\n/g,"")
+    // console.log(html)
     latestVdom = convertHTML('<original>' + html + '</original>')
     // キーなしVdomを比較するためtempしておく
     let tempVdom = _.cloneDeep(latestVdom);
