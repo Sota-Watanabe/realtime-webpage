@@ -1,7 +1,6 @@
 node_modules
 .DS_Store
-bundle_viewer.js
-bundle_editor.js
+bundle_*.js
 メモ.md
 serializedPatches.json
 # Local Netlify folder
