@@ -24,30 +24,21 @@ window.addEventListener('DOMContentLoaded', function () {
     document.getElementById('file').addEventListener('change', ev => {
         files = ev.target.files
         console.log(files)
-        // files = JSON.parse(files)
-        console.log(files)
-        var Human = {
-            firstName : 'Taro',
-            lastName : 'Tanaka',
-            hometown: {
-                    country : 'Japan',
-                    prefecture :'Osaka',
-                    city :'Toyonaka'
-            }
-    };
-        console.log(Human)
-        files = files.sort(function(a, b) {
-            return (a.date < b.date) ? -1 : 1;  //オブジェクトの昇順ソート
-          });
+
+        files = Object.keys(files).map(function (key) {
+            return files[key];
+        }).sort(function (a, b) {
+            return (a.name < b.name) ? -1 : 1;  //オブジェクトの昇順ソート
+        });
         max_file_index = ev.target.files.length
-        document.getElementById("push_button").style.display ="block";
+        document.getElementById("push_button").style.display ="block";    console.log(files)
     })
-    document.getElementById("push_button").style.display ="none";
+    document.getElementById("push_button").style.display = "none";
 });
 
 window.pushedEvent = () => {
-    if (file_index === max_file_index)return
-    document.getElementById('file_index').innerHTML = (file_index+1) + "つ目のファイルを送信しました。"
+    if (file_index === max_file_index) return
+    document.getElementById('file_index').innerHTML = (file_index + 1) + "つ目のファイルを送信しました。"
     let file = files[file_index];
     // ディレクトリの相対パス
     let relativePath = file.webkitRelativePath;
@@ -98,17 +89,3 @@ const checkHTML = (html) => {
     }
     return true
 }
-
-function compare(a, b) {
-    console.log('a=', a)
-    const nameA = a.name
-    const nameB = b.name
-  
-    let comparison = 0;
-    if (nameA > nameB) {
-      comparison = 1;
-    } else if (nameA < nameB) {
-      comparison = -1;
-    }
-    return comparison;
-  }
