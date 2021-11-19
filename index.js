@@ -92,7 +92,7 @@ http.listen(3000, () => {
 io.on('connection', (socket) => {
   console.log('connect: ',socket.client.conn.server.clientsCount);
   let admin = false;
-  console.log("suggestData, virtualData, reloadData")
+  // console.log("suggestData, virtualData, reloadData")
   // io.to(socket.id).emit('editingStatus', editingStatus);
 
   socket.on('`start`Editing', (status) => {
