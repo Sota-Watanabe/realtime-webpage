@@ -8,4 +8,13 @@ scenarios:
     flow:
       - get:
           url: "/viewer"
+      - emit:
+          channel: "checkDomVersion"
+          data: 3
+        response:
+          channel: "latestHtml"
+          capture:
+            json: "$"
+            as: "data"
       - think: 200
+      # - log: "Emitting captured values: {{ data }}"
