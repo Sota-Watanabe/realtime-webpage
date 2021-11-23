@@ -35,6 +35,7 @@ let previousVdom = convertHTML('<original></original>')
 let previousHTML = ""
 domVersion = 0
 domStore = []
+patchesStore = {}
 let editingStatus = false
 
 app.get('/', (req, res) => {
@@ -92,7 +93,7 @@ http.listen(3000, () => {
 io.on('connection', (socket) => {
   console.log('connect: ',socket.client.conn.server.clientsCount);
   let admin = false;
-  console.log("suggestData, virtualData, reloadData")
+  // console.log("suggestData, virtualData, reloadData")
   // io.to(socket.id).emit('editingStatus', editingStatus);
 
   socket.on('`start`Editing', (status) => {
@@ -197,29 +198,36 @@ io.on('connection', (socket) => {
     console.log('latest: domVersion=', latestDomVersion)
     // console.log('checkDomVersion: domVersion=', domVersion)
     // 最新のDOM状態ではない場合
-    if (domStore.length !== domVersion) {
+    if (latestDomVersion !== domVersion) {
       console.log("update dom from current dom")
-      // 初めてアクセスしたとき
-      if (domVersion == 0) {
-        console.log('first access')
-        currentVdom = convertHTML('<body></body>')
+      // 以前、同じ比較をしたことがある
+      data = patchesStore[{'from': domVersion, 'to': latestDomVersion}]
+      console.log('before if')
+      if (data === undefined) {
+        console.log('data === undefined')
+        // 初めてアクセスしたとき
+        if (domVersion == 0) {
+          console.log('first access')
+          currentVdom = convertHTML('<body></body>')
+        }
+        // 途中で回線が落ちた場合
+        else {
+          currentVdom = domStore[domVersion - 1]
+          // console.log("currentVdom:", currentVdom)
+        }
+        latestVdom = domStore.slice(-1)[0]
+        // console.log("latestVdom:", latestVdom)
+        const patches = diff(currentVdom, latestVdom);
+        const serializedPatches = Serializer.serializePatches(patches);
+        data = {
+          vdom: serializedPatches,
+          variable: null,
+          domVersion: domStore.length
+        };
+        patchesStore[{'from': domVersion, 'to': latestDomVersion}] = data
       }
-      // 途中で回線が落ちた場合
-      else {
-        currentVdom = domStore[domVersion - 1]
-        // console.log("currentVdom:", currentVdom)
-      }
-      latestVdom = domStore.slice(-1)[0]
-      // console.log("latestVdom:", latestVdom)
-      const patches = diff(currentVdom, latestVdom);
-      const serializedPatches = Serializer.serializePatches(patches);
-      const data = {
-        vdom: serializedPatches,
-        variable: null,
-        domVersion: domStore.length
-      };
       io.to(socket.id).emit('latestHtml', data);
-      console.log('io.to')
+      console.log('patchesStore=', patchesStore)
     }
   });
 });
