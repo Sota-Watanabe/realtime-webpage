@@ -60,7 +60,6 @@ app.post('/', (req, res) => {
   html = html.replace(/<!--.+? -->/g, '')
 
   latestVdom = convertHTML('<original>' + html + '</original>')
-  // console.log('latestVdom=', latestVdom)
   const patches = diff(previousVdom, latestVdom);
   // console.log('patches=', JSON.stringify(patches))
   // 変更なしの場合
